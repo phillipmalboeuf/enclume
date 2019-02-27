@@ -27,10 +27,10 @@ body {
 
 main {
   min-height: 66vh;
-  padding: $rythm*2;
 
-  @media #{$tablet_portrait} {
-    padding: $rythm;
+  > div {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -42,6 +42,10 @@ main {
 
   &.max_width--wide {
     max-width: $max_width*2;
+  }
+
+  &.max_width--tight {
+    max-width: $max_width/2;
   }
 
   &.max_width--center {

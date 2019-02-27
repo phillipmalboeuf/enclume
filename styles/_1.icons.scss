@@ -22,4 +22,15 @@
     height: (8/$base) * 1rem;
     color: $black;
   }
+
+  &.icon--anvil_orange {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: auto;
+    max-width: none;
+    height: 100vh;
+    color: $orange;
+  }
 }

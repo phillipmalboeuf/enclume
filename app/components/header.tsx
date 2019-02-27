@@ -40,16 +40,16 @@ export class Header extends React.Component<Props, State> {
 
         <div className='grid grid--thick_guttered'>
           <div className='col'>
-            <NavLink to='/projects'>Projets</NavLink>
+            <NavLink className='header__link' to='/projects'>Projets</NavLink>
           </div>
           <div className='col'>
-            <NavLink to='/about'>À propos</NavLink>
+            <NavLink className='header__link' to='/about'>À propos</NavLink>
           </div>
           <div className='col'>
-            <NavLink to='/contact'>Contact</NavLink>
+            <NavLink className='header__link' to='/contact'>Contact</NavLink>
           </div>
           <div className='col'>
-            <Link to='#'>En</Link>
+            <Link className='header__link' to='#'>En</Link>
           </div>
         </div>
       </div>

@@ -23,11 +23,11 @@ export class Index extends React.Component<Props, State> {
 
   public render() {
     return <>
-      <div className='main' role='main'>
+      <main role='main'>
         <div className='grid grid--full grid--middle grid--center'>
           <Icon i='logo' />
         </div>
-      </div>
+      </main>
     </>
   }
 }

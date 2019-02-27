@@ -272,6 +272,7 @@ sub {
 .green_back { background-color: $green; }
 .grey_back { background-color: $grey; }
 .red_back { background-color: $red; }
+.teal_back { background-color: $teal; }
 .blue_back { background-color: $blue; }
 .beige_back { background-color: $beige; }
 
@@ -297,6 +298,11 @@ a.slight {
 .medium {
   font-size: $medium_size;
   line-height: $rythm*2.333;
+}
+
+.big {
+  font-size: $big_size;
+  line-height: $rythm*1.333;
 }
 
 b,

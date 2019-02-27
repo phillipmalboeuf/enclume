@@ -18,8 +18,13 @@ header {
 
   .header__link {
 
-    &.header__link--focus {
-      font-weight: 500;
+    &:hover,
+    &:focus {
+      color: $blue--dark;
+    }
+
+    &.active {
+      text-decoration: underline;
     }
   }
 

@@ -10,7 +10,8 @@ export const Icon: React.SFC<Props> = (props) => {
         logo: '0 0 810 220',
         divet: '0 0 12 8',
 				arrow: '0 0 17 12',
-				checkmark: '0 0 14.5 14.5'
+				checkmark: '0 0 14.5 14.5',
+				anvil_orange: '0 0 1550.23 1244.31'
       } as any)[props.i] || '0 0 512 512'}>
     {({
       logo: <><path d="M110.5,126.38c-3.91,23.71-24.4,39.13-53.18,39.13C23.02,165.52,0,138.12,0,104.97C0,70.9,21.18,45.81,55.25,45.81
@@ -49,7 +50,9 @@ export const Icon: React.SFC<Props> = (props) => {
 			checkmark: <g>
 				<circle cx='7.2' cy='7.2' r='7.2'/>
 				<polyline fill='none' stroke='white' strokeWidth='1.6111' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' points='10.6,5.3 6.5,9.9 4.2,7.6 	'/>
-			</g>
+			</g>,
+			anvil_orange: <path d="M0,0h699h303l0.34,142.87h547.89v629.32h-262.02c-109.42,0-178.45,40.35-221.58,96.77
+	c-56.54,73.97-68.53,175.59-68.53,250.19v13.63c0,41.87,3.14,75.27,11.52,110.62l0,0c1.89,2.04,0,0,0,0H986.5H0"/>
     } as any)[props.i]}
   </svg>
 }
