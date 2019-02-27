@@ -7,6 +7,7 @@ import { FourOFour } from './routes/404'
 import { Contact } from './routes/contact'
 import { About } from './routes/about'
 import { Projects } from './routes/projects'
+import { ProjectsProject } from './routes/project';
 
 
 
@@ -18,6 +19,7 @@ export const Routes: React.SFC<Props> = (props) => {
   if (props.onRoute) { props.onRoute() }
   return <Switch>
     <Route exact path='/projects' component={Projects} />
+    <Route exact path='/projects/:project' component={ProjectsProject} />
     <Route exact path='/about' component={About} />
     <Route exact path='/contact' component={Contact} />
     <Route exact path='/' component={Index} />

@@ -24,7 +24,8 @@
   }
 
   &.icon--anvil_orange,
-  &.icon--anvil_blue {
+  &.icon--anvil_blue,
+  &.icon--anvil_green {
     position: absolute;
     top: 0;
     left: 0;
@@ -37,6 +38,13 @@
 
   &.icon--anvil_blue {
     color: $blue;
+    width: 100vw;
+    height: auto;
+    background: $white;
+  }
+
+  &.icon--anvil_green {
+    color: $green--light;
     width: 100vw;
     height: auto;
     background: $white;

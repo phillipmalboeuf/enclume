@@ -270,6 +270,7 @@ sub {
 .white_back { background-color: $white; }
 .black_back { color: $white; background-color: $black; }
 .green_back { background-color: $green; }
+.light_green_back { background-color: $green--light; }
 .grey_back { background-color: $grey; }
 .red_back { background-color: $red; }
 .teal_back { background-color: $teal; }
