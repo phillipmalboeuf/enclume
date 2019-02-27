@@ -1,0 +1,26 @@
+
+import * as React from 'react'
+import { Route, Redirect, Switch } from 'react-router-dom'
+
+import { Index } from './routes/index'
+import { FourOFour } from './routes/404'
+import { Contact } from './routes/contact'
+import { About } from './routes/about'
+import { Projects } from './routes/projects'
+
+
+
+interface Props {
+  onRoute?: Function
+}
+
+export const Routes: React.SFC<Props> = (props) => {
+  if (props.onRoute) { props.onRoute() }
+  return <Switch>
+    <Route exact path='/projects' component={Projects} />
+    <Route exact path='/about' component={About} />
+    <Route exact path='/contact' component={Contact} />
+    <Route exact path='/' component={Index} />
+    <Route component={FourOFour} />
+  </Switch>
+}
