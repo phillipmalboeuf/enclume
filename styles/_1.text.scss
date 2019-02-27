@@ -76,7 +76,7 @@ h1 {
 
 h2 {
   font-size: $big_size;
-  line-height: $rythm*2;
+  line-height: $rythm*1.333;
   font-weight: normal;
 
   &.h2--giant {
@@ -92,7 +92,7 @@ h2 {
 
 h3 {
   font-size: $medium_size;
-  line-height: $rythm*2.333;
+  line-height: $rythm;
   font-weight: normal;
 
   &.h3--light {
@@ -292,12 +292,12 @@ small,
 .slight,
 a.slight {
   font-size: $slight_size;
-  line-height: $rythm*1.33;
+  line-height: $rythm/1.5;
 }
 
 .medium {
   font-size: $medium_size;
-  line-height: $rythm*2.333;
+  line-height: $rythm;
 }
 
 .big {

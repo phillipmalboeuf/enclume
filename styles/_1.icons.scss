@@ -23,7 +23,8 @@
     color: $black;
   }
 
-  &.icon--anvil_orange {
+  &.icon--anvil_orange,
+  &.icon--anvil_blue {
     position: absolute;
     top: 0;
     left: 0;
@@ -32,5 +33,12 @@
     max-width: none;
     height: 100vh;
     color: $orange;
+  }
+
+  &.icon--anvil_blue {
+    color: $blue;
+    width: 100vw;
+    height: auto;
+    background: $white;
   }
 }

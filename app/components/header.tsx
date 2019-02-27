@@ -25,7 +25,7 @@ export class Header extends React.Component<Props, State> {
   componentDidMount() {
     let Headroom = require('headroom.js')
     let hr = new Headroom(this.element, {
-      offset : 333,
+      offset : 66,
       tolerance: {
         up: 24
       }
