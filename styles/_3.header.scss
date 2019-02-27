@@ -18,12 +18,9 @@ header {
 
   .header__link {
 
-    &:hover,
+    &.active,
     &:focus {
-      color: $blue--dark;
-    }
-
-    &.active {
+      color: $black--dark;
       text-decoration: underline;
     }
   }

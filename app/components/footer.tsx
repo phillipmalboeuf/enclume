@@ -36,18 +36,18 @@ export class Footer extends React.Component<Props, State> {
 
         <div className='grid grid--thick_guttered'>
           <div className='col'>
-            514-756-4113<br />
-            info@enclume.ca
+            <a href='tel:514-756-4113' target='_blank'>514-756-4113</a><br />
+            <a href='mailto:info@enclume.ca' target='_blank'>info@enclume.ca</a>
           </div>
           <div className='col'>
-            5337, boulevard<br />
+            <a href='https://goo.gl/maps/jPr4tvzm1AB2' target='_blank'>5337, boulevard<br />
             Saint-Laurent, #350<br />
             Montréal, Québec<br />
-            H2T 1S5
+            H2T 1S5</a>
           </div>
           <div className='col'>
-            facebook<br />
-            instagram
+            <a href='https://facebook.com' target='_blank'>facebook</a><br />
+            <a href='https://instagram.com' target='_blank'>instagram</a>
           </div>
         </div>
       </div>
