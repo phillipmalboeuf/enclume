@@ -10,14 +10,12 @@ import { App } from './components/app'
 
 declare global {
   interface Window {
-    pieces: any,
-    response: any,
-    // user: User
+    content: any
   }
 }
 
 
-if (window.pieces) {
+if (window.content) {
   ReactDOM.hydrate(<App />, document.getElementById('app'))
 } else {
   ReactDOM.render(<App />, document.getElementById('app'))

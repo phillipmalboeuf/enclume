@@ -61,6 +61,10 @@ main {
     padding: $gutter $gutter/2;
   }
 
+  &.padded--thick {
+    padding: $gutter*2;
+  }
+
   &.padded--tight {
     padding: $gutter/2;
   }

@@ -1,0 +1,6 @@
+{
+  "ORIGIN": "http://localhost:8089,http://localhost:8080",
+  "SERVER_PORT": "8089",
+  "SPACE_ID": "",
+  "ACCESS_TOKEN": ""
+}
