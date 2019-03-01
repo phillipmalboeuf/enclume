@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "11.8"
+    "node": "11.10.1"
   },
   "scripts": {
     "start": "NODE_ENV=production node dist/server.js",
