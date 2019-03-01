@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "10"
+    "node": "8"
   },
   "scripts": {
     "start": "NODE_ENV=production node dist/server.js",
@@ -35,12 +35,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
-    "react-spring": "^8.0.8",
-    "node-sass": "^4.11.0",
-    "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.11.0",
-    "sass": "^1.17.2",
-    "typescript": "^3.3.3333"
+    "react-spring": "^8.0.8"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
@@ -58,6 +53,11 @@
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "@types/react-router-dom": "^4.3.1",
-    "nodemon": "^1.18.10"
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "normalize.css": "^8.0.1",
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.2",
+    "typescript": "^3.3.3333"
   }
 }
