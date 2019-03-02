@@ -49,7 +49,10 @@ export class Header extends React.Component<Props, State> {
             <NavLink className='header__link' to='/contact'>Contact</NavLink>
           </div>
           <div className='col'>
-            <Link className='header__link' to='#'>En</Link>
+            <a className='header__link' onClick={()=> {
+              this.context.selectLocale(this.context.locale === 'fr-CA' ? 'en-US' : 'fr-CA')
+              this.context.fetchContent()
+            }}>{this.context.locale === 'fr-CA' ? 'En' : 'Fr'}</a>
           </div>
         </div>
       </div>

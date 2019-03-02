@@ -26,7 +26,7 @@ export class App extends React.Component<Props, State> {
     super(props)
     this.state = {
       content: window.content,
-      locale: cookies.get('locale') || 'en_US'
+      locale: cookies.get('locale') || 'fr-CA'
     }
   }
 
@@ -45,7 +45,9 @@ export class App extends React.Component<Props, State> {
   }
 
   private fetchContent() {
-    axios.get(`${process.env.NODE_ENV === 'production' ? '' : '//localhost:8089'}/content`)
+    axios.get(`${process.env.NODE_ENV === 'production' ? '' : '//localhost:8089'}/content`, {
+      withCredentials: true
+    })
       .then(response => this.setState({
         content: response.data
       }))

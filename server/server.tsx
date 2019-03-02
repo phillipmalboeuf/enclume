@@ -41,14 +41,14 @@ const content = contentful.createClient({
   accessToken: CONF('ACCESS_TOKEN')
 })
 
-const entries = ()=> Promise.all([
-  content.getEntries({ content_type: 'homepage' }),
-  content.getEntries({ content_type: 'contact' }),
-  content.getEntries({ content_type: 'project' })
+const entries = (locale: string)=> Promise.all([
+  content.getEntries({ content_type: 'homepage', locale }),
+  content.getEntries({ content_type: 'contact', locale }),
+  content.getEntries({ content_type: 'project', locale })
 ])
 
 server.get('/content', (req: Request, res: Response) => {
-  entries().then(([homepages, contacts, projects])=> {
+  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, projects])=> {
     res.send({
       homepage: homepages.items[0],
       contact: contacts.items[0],
@@ -58,7 +58,7 @@ server.get('/content', (req: Request, res: Response) => {
 })
 
 server.get('/*', (req: Request, res: Response) => {
-  entries().then(([homepages, contacts, projects])=> {
+  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, projects])=> {
     res.send(`<!doctype html>${ReactDOM.renderToString(
       <HTML
         url={req.originalUrl}
