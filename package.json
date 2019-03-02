@@ -1,10 +1,8 @@
 {
   "name": "enclume",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
   "engines": {
-    "node": "8"
+    "node": "11"
   },
   "scripts": {
     "start": "NODE_ENV=production node dist/server.js",
