@@ -5,6 +5,7 @@ import { Link, RouteComponentProps, NavLink } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
 import { Picture } from '../components/picture'
+import { LE, LPE } from '../components/entry'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -28,19 +29,20 @@ export class Projects extends React.Component<Props, State> {
         <div className='padded padded--big_top'>
           <nav className='grid grid--guttered'>
             <div className='col'><NavLink className='header__link' to='/projects'>Tous</NavLink></div>
-            <div className='col'><NavLink className='header__link' to='/projects?tags=planning'>Planification et Conception</NavLink></div>
-            <div className='col'><NavLink className='header__link' to='/projects?tags=research'>Recherche et Analyse</NavLink></div>
-            <div className='col'><NavLink className='header__link' to='/projects?tags=participation'>Accompagnement et Participation publique</NavLink></div>
+            {this.context.content.categories.map(category => <div className='col' key={category.fields.title}>
+              <NavLink className='header__link' to={`/projects?tags=${category.fields.key}`}><LE c={category} k='title' /></NavLink>
+            </div>)}
           </nav>
 
           <div className='normal_bottom' />
 
           <div className='grid grid--guttered'>
-            {Array(12).fill({}).map((project, index)=> <div key={index} className='col col--4of12'>
-              <Link to={`/projects/${index}`}>
-                <div className=''><Picture src={'/enclume/caserne.jpg'} small /></div>
+            {this.context.content.projects.map(project => <div key={project.fields.url} className='col col--4of12'>
+              <Link to={`/projects/${project.fields.url}`}>
+                {console.log(project.fields)}
+                <div className=''><LPE c={project} k='hero' /></div>
                 <p className='slight'>
-                  Caserne 26
+                  <LE c={project} k='title' />
                 </p>
               </Link>
             </div>)}

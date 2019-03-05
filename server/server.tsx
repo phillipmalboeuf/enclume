@@ -44,21 +44,23 @@ const content = contentful.createClient({
 const entries = (locale: string)=> Promise.all([
   content.getEntries({ content_type: 'homepage', locale }),
   content.getEntries({ content_type: 'contact', locale }),
+  content.getEntries({ content_type: 'category', locale }),
   content.getEntries({ content_type: 'project', locale })
 ])
 
 server.get('/content', (req: Request, res: Response) => {
-  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, projects])=> {
+  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, categories, projects])=> {
     res.send({
       homepage: homepages.items[0],
       contact: contacts.items[0],
+      categories: categories.items,
       projects: projects.items
     })
   })
 })
 
 server.get('/*', (req: Request, res: Response) => {
-  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, projects])=> {
+  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, categories, projects])=> {
     res.send(`<!doctype html>${ReactDOM.renderToString(
       <HTML
         url={req.originalUrl}
@@ -66,6 +68,7 @@ server.get('/*', (req: Request, res: Response) => {
         content={{
           homepage: homepages.items[0],
           contact: contacts.items[0],
+          categories: categories.items,
           projects: projects.items
         }}
         phone={req.useragent.isMobile}>

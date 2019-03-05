@@ -8,7 +8,7 @@ interface Props {
 }
 
 const url = (src: string, size: number): string => {
-  return `https://montrealuploads.imgix.net${src}?auto=format,compress&w=${size}`
+  return `${src}`
 }
 
 export const Picture: React.SFC<Props> = props => {

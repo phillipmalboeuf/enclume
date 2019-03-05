@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
+import { E } from '../components/entry';
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -29,16 +30,13 @@ export class Contact extends React.Component<Props, State> {
         <div className='grid grid--full grid--middle'>
           <div className='padded'>
             <p className='big'>
-              <a href='tel:514-756-4113' target='_blank'>514-756-4113</a><br />
-              <a href='mailto:info@enclume.ca' target='_blank'>info@enclume.ca</a>
+              <a href={`tel:${this.context.content.contact.fields.phoneNumber}`} target='_blank'><E c='contact' k='phoneNumber' /></a><br />
+              <a href={`mailto:${this.context.content.contact.fields.emailAddress}`} target='_blank'><E c='contact' k='emailAddress' /></a>
             </p>
 
             <p className='big'>
               <a href='https://goo.gl/maps/jPr4tvzm1AB2' target='_blank'>
-                5337, blvd. Saint-Laurent,<br />
-                Bureau #350<br />
-                Montréal, Québec<br />
-                H2T 1S5
+                <E c='contact' k='address' />
               </a>
             </p>
 

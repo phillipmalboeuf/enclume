@@ -127,6 +127,7 @@ h6 {
 
 p {
   margin: 0 0 $rythm*1.5;
+  white-space: pre-line;
 
   &:last-child {
     margin-bottom: 0;

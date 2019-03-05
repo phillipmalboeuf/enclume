@@ -5,6 +5,7 @@ import { Link, RouteComponentProps, NavLink } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
 import { Picture } from '../components/picture'
+import { LE, LPE } from '../components/entry'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -23,16 +24,18 @@ export class ProjectsProject extends React.Component<Props, State> {
   }
 
   public render() {
+    let project = this.context.content.projects.find(project => project.fields.url === this.props.match.params.project)
+    
     return <>
       <main className='' role='main'>
         {/* <Icon i='anvil_green' /> */}
 
         <div className='padded padded--big_top'>
           <div className='padded medium_bottom max_width max_width--wide max_width--center'>
-            <Picture src={'/enclume/caserne.jpg'} />
+            <LPE c={project} k={'hero'} />
           </div>
 
-          <h1>Caserne 26</h1>
+          <h1><LE c={project} k={'title'} /></h1>
 
           {/* <p>Le mandat consistait à réaliser une recherche historique et architecturale 
           de la caserne 26, aussi connue comme l’ancien hôtel de ville De Lorimier,
