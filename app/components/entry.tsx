@@ -30,6 +30,19 @@ export class RE extends React.PureComponent<{
   }
 }
 
+export class PE extends React.PureComponent<{
+  c: string,
+  k: string,
+  small?: boolean
+}, {}> {
+  static contextType = AppContext
+  context!: React.ContextType<typeof AppContext>
+
+  render() {
+    return <Picture src={this.context.content[this.props.c as 'homepage'].fields[this.props.k].fields.file.url} small={this.props.small} />
+  }
+}
+
 export class LE extends React.PureComponent<{
   c: { fields: { [key:string]: any } },
   k: string

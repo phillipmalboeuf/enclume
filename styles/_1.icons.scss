@@ -25,7 +25,9 @@
 
   &.icon--anvil_orange,
   &.icon--anvil_blue,
-  &.icon--anvil_green {
+  &.icon--anvil_green,
+  &.icon--anvil_hero,
+  &.icon--anvil_homepage {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,5 +50,30 @@
     width: 100vw;
     height: auto;
     background: $white;
+  }
+
+  &.icon--anvil_hero {
+    color: $beige;
+    width: 100vw;
+    height: 100vh;
+    padding: 10vh 3vw;
+  }
+
+  &.icon--anvil_homepage {
+    width: 100vw;
+    height: auto;
+    z-index: -1;
+
+    path:nth-child(1) {
+      fill: $blue--dark;
+    }
+
+    path:nth-child(2) {
+      fill: $beige;
+    }
+
+    path:nth-child(3) {
+      fill: $blue;
+    }
   }
 }

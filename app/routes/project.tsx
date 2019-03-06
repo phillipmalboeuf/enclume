@@ -37,6 +37,8 @@ export class ProjectsProject extends React.Component<Props, State> {
 
           <h1><LE c={project} k={'title'} /></h1>
 
+          <div className='big_bottom' />
+
           {/* <p>Le mandat consistait à réaliser une recherche historique et architecturale 
           de la caserne 26, aussi connue comme l’ancien hôtel de ville De Lorimier,
           située au 2151 avenue du Mont-Royal Est.</p>

@@ -1,0 +1,26 @@
+
+// #HERO
+
+.hero {
+  position: relative;
+  // z-index: 20;
+  width: 100vw;
+  height: 100vh;
+
+  > picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  > svg {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+  
