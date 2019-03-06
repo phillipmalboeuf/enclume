@@ -6,8 +6,6 @@
 // #BODY
 
 html {
-  // overflow-x: hidden;
-  // padding-bottom: 0 !important;
 
   &.noscroll {
     overflow: hidden;
@@ -128,4 +126,5 @@ main {
 .text_left { text-align: left; }
 .grow { flex-grow: 1; }
 .scroll { overflow: scroll; }
+.nooverflow { overflow: hidden; }
 
