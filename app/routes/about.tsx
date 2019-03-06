@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
+import { LPE, LE } from '../components/entry';
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -67,9 +68,7 @@ export class About extends React.Component<Props, State> {
               <h6>Champs d’expertises</h6>
             </div>
             <div className='col col--6of12'>
-              <h3>Planification et Conception</h3>
-              <h3>Recherche et Analyse</h3>
-              <h3>Accompagnement et Participation publique</h3>
+              {this.context.content.categories.map(category => <h3>{category.fields.title}</h3>)}
             </div>
             <div className='col col--5of12'><p className='medium'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad</p></div>
           </div>
@@ -85,7 +84,51 @@ passionnée par une approche intégrée en
 aménagement. Pour cette raison, nous réalisons 
 des mandats dans une grande diversité des sphères 
 de l’aménagement, qu’il soit rural ou urbain.</p></div>
+
+            <div className='col col--12of12'></div>
+            {this.context.content.team_members.map(member => <div key={member.fields.name} className='col col--4of12'>
+              <a href={`${member.fields.url}`}>
+                <div className=''><LPE c={member} k='photo' /></div>
+                {/* <p className='slight'>
+                  <LE c={member} k='name' />
+                </p> */}
+              </a>
+            </div>)}
+            {this.context.content.team_members.map(member => <div key={member.fields.name} className='col col--4of12'>
+              <a href={`${member.fields.url}`}>
+                <div className=''><LPE c={member} k='photo' /></div>
+                {/* <p className='slight'>
+                  <LE c={member} k='name' />
+                </p> */}
+              </a>
+            </div>)}
           </div>
+
+          <div className='big_bottom' />
+
+          <div className='grid grid--tight_guttered'>
+            <div className='col col--12of12'>
+              <h6>Collaborateurs</h6>
+            </div>
+            <div className='col col--8of12'><p className='big'>L’Enclume possède un réseau de collaborateurs spécialisés avec qui elle s’allie pour offrir des services plus pointus en cas de besoin.</p></div>
+
+            <div className='col col--12of12'></div>
+            {this.context.content.collaborators.map(collaborator => <div key={collaborator.fields.name} className='col col--9of12 col--tablet_portrait--12of12'>
+              <hr />
+              <a href={`${collaborator.fields.url}`}>
+                <div className='grid grid--guttered grid--middle'>
+                  <div className='col col--5of12'>
+                    <h2><LE c={collaborator} k='name' /></h2>
+                  </div>
+                  <div className='col col--7of12'>
+                    <LE c={collaborator} k='description' />
+                  </div>
+                </div>
+              </a>
+            </div>)}
+          </div>
+
+          <div className='big_bottom' />
         </div>
       </main>
     </>

@@ -45,22 +45,26 @@ const entries = (locale: string)=> Promise.all([
   content.getEntries({ content_type: 'homepage', locale }),
   content.getEntries({ content_type: 'contact', locale }),
   content.getEntries({ content_type: 'category', locale }),
-  content.getEntries({ content_type: 'project', locale })
+  content.getEntries({ content_type: 'project', locale }),
+  content.getEntries({ content_type: 'teamMember', locale }),
+  content.getEntries({ content_type: 'collaborator', locale })
 ])
 
 server.get('/content', (req: Request, res: Response) => {
-  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, categories, projects])=> {
+  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, categories, projects, team_members, collaborators])=> {
     res.send({
       homepage: homepages.items[0],
       contact: contacts.items[0],
       categories: categories.items,
-      projects: projects.items
+      projects: projects.items,
+      team_members: team_members.items,
+      collaborators: collaborators.items
     })
   })
 })
 
 server.get('/*', (req: Request, res: Response) => {
-  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, categories, projects])=> {
+  entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, categories, projects, team_members, collaborators])=> {
     res.send(`<!doctype html>${ReactDOM.renderToString(
       <HTML
         url={req.originalUrl}
@@ -69,7 +73,9 @@ server.get('/*', (req: Request, res: Response) => {
           homepage: homepages.items[0],
           contact: contacts.items[0],
           categories: categories.items,
-          projects: projects.items
+          projects: projects.items,
+          team_members: team_members.items,
+          collaborators: collaborators.items
         }}
         phone={req.useragent.isMobile}>
         <Routes />

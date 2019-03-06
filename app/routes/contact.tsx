@@ -40,7 +40,9 @@ export class Contact extends React.Component<Props, State> {
               </a>
             </p>
 
-            <p className='max_width max_width--tight'>Pour toutes demande de stage ou pour une candidature spontanée veuillez nous contacter à <a href='mailto:info@enclume.ca' target='_blank'>carrieres@enclume.ca</a></p>
+            <div className='max_width max_width--tight'>
+              <E c='contact' k='information' />
+            </div>
           </div>
           
         </div>

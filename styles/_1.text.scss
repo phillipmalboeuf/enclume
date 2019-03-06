@@ -199,9 +199,10 @@ hr {
 
   width: 100%;
   height: 1px;
-  background: $grey;
+  background: currentColor;
 
-  margin: $rythm auto;
+  margin: $rythm/4 auto;
+  margin-top: 0;
 }
 
 
