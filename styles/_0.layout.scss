@@ -86,7 +86,7 @@ main {
 .big_bottom { margin-bottom: $rythm*4; }
 .medium_bottom { margin-bottom: $rythm*2; }
 .normal_bottom { margin-bottom: $rythm; }
-.small_bottom { margin-bottom: $rythm/2; }
+.small_bottom { margin-bottom: $rythm/4; }
 .flat_bottom { margin-bottom: 0 !important; }
 .flat_bottom_on_phone { @media #{$phone} { margin-bottom: 0 !important; } }
 .flat_top { margin-top: 0 !important; }
