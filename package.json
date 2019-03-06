@@ -14,6 +14,7 @@
   "author": "Phillip Malboeuf <phillip.malboeuf@gmail>",
   "license": "ISC",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.1.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "browser-cookies": "^1.2.0",

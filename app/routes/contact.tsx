@@ -1,10 +1,10 @@
 
 import * as React from 'react'
-
 import { Link, RouteComponentProps } from 'react-router-dom'
+
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
-import { E } from '../components/entry';
+import { E, RE } from '../components/entry'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -40,8 +40,8 @@ export class Contact extends React.Component<Props, State> {
               </a>
             </p>
 
-            <div className='max_width max_width--tight'>
-              <E c='contact' k='information' />
+            <div className='max_width max_width--tight underline_links'>
+              <RE c='contact' k='information' />
             </div>
           </div>
           
