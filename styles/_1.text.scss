@@ -6,6 +6,7 @@ html {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: fade-out($color: $green--light, $amount: 0.5);
 
   // @media #{$big_desktop} {
   //   font-size: 15px;
@@ -80,6 +81,11 @@ h2 {
   line-height: $rythm*1.333;
   font-weight: normal;
 
+  @media #{$tablet_portrait} {
+    font-size: $medium_size;
+    line-height: $rythm/1.2;
+  }
+
   &.h2--giant {
     font-size: $giant_size;
     line-height: $rythm*3;
@@ -93,33 +99,28 @@ h2 {
 
 h3 {
   font-size: $medium_size;
-  line-height: $rythm;
+  line-height: $rythm/1.2;
   font-weight: normal;
 
-  &.h3--light {
-    font-weight: normal;
+  @media #{$tablet_portrait} {
+    font-size: $slight_size;
+    line-height: $rythm/1.5;
   }
 }
 
 h4 {
   font-size: $slight_size;
-  line-height: $rythm*1.66;
+  line-height: $rythm/1.5;
 }
 
 h5 {
   font-size: $base_size;
   text-transform: uppercase;
   letter-spacing: $letter_spacing;
-  margin-bottom: $rythm*1.5;
 }
 
 h6 {
   font-size: $base_size;
-  margin-bottom: $rythm*1.5;
-
-  &.h6--light {
-    font-weight: normal;
-  }
 }
 
 
@@ -302,12 +303,17 @@ a.slight {
 
 .medium {
   font-size: $medium_size;
-  line-height: $rythm;
+  line-height: $rythm/1.2;
 }
 
 .big {
   font-size: $big_size;
   line-height: $rythm*1.333;
+
+  @media #{$tablet_portrait} {
+    font-size: $medium_size;
+    line-height: $rythm/1.2;
+  }
 }
 
 b,

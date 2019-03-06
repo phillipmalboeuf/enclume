@@ -74,14 +74,30 @@
     }
   }
 
+  @media #{$tablet_portrait} {
+    &.grid--center_on_tablet_portrait {
+      justify-content: center;
+    }
+  }
+
   &.grid--guttered {
     width: auto;
     margin-left: -$gutter;
     margin-bottom: -$gutter;
 
+    @media #{$tablet_portrait} {
+      margin-left: -$gutter/2;
+      margin-bottom: -$gutter/2;
+    }
+
     > .col {
       padding-left: $gutter;
       padding-bottom: $gutter;
+
+      @media #{$tablet_portrait} {
+        padding-left: $gutter/2;
+        padding-bottom: $gutter/2;
+      }
     }
   }
 
@@ -90,9 +106,17 @@
     margin-left: -$gutter*2;
     margin-bottom: -$gutter;
 
+    @media #{$tablet_portrait} {
+      margin-left: -$gutter;
+    }
+
     > .col {
       padding-left: $gutter*2;
       padding-bottom: $gutter;
+
+      @media #{$tablet_portrait} {
+        padding-left: $gutter;
+      }
     }
   }
 

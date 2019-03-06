@@ -63,6 +63,8 @@ main {
 
   &.padded--thick {
     padding: $gutter*2;
+
+    @media #{$tablet_portrait} { padding: $gutter; }
   }
 
   &.padded--tight {
@@ -71,6 +73,7 @@ main {
 
   &.padded--big_top {
     padding-top: $gutter*4;
+    @media #{$tablet_portrait} { padding-top: $gutter*3; }
   }
 
   &.padded--flat_top {
@@ -83,8 +86,8 @@ main {
 }
 
 .full_height { height: 100vh !important; }
-.big_bottom { margin-bottom: $rythm*4; }
-.medium_bottom { margin-bottom: $rythm*2; }
+.big_bottom { margin-bottom: $rythm*4; @media #{$tablet_portrait} { margin-bottom: $rythm*2; } }
+.medium_bottom { margin-bottom: $rythm*2; @media #{$tablet_portrait} { margin-bottom: $rythm; } }
 .normal_bottom { margin-bottom: $rythm; }
 .small_bottom { margin-bottom: $rythm/4; }
 .flat_bottom { margin-bottom: 0 !important; }
@@ -93,7 +96,7 @@ main {
 .small_top { margin-top: $rythm/2; }
 .normal_top { margin-top: $rythm; }
 .medium_top { margin-top: $rythm*2; }
-.overflow_top {margin-top: -$rythm*5; }
+.overflow_top { margin-top: -$rythm*5; @media #{$tablet_portrait} { margin-top: -$rythm*2; } }
 
 .spaced {
   margin: 0 0.5em 0 1em;

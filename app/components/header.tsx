@@ -15,6 +15,7 @@ export class Header extends React.Component<Props, State> {
   static contextType = AppContext
   context!: React.ContextType<typeof AppContext>
   public element: HTMLElement
+  public summary: HTMLElement
 
   constructor(props: Props) {
     super(props)
@@ -34,28 +35,63 @@ export class Header extends React.Component<Props, State> {
   }
 
   render() {
-    return <header ref={element => this.element = element}>
-      <div className='grid grid--spaced grid--middle'>
-        <Link to='/'><Icon i='logo' /></Link>
+    return <>
+      <header ref={element => this.element = element}>
+        <div className='grid grid--spaced grid--center_on_tablet_portrait grid--middle'>
+          <Link to='/'><Icon i='logo' /></Link>
 
-        <div className='grid grid--thick_guttered'>
-          <div className='col'>
-            <NavLink className='header__link' to='/projects'>Projets</NavLink>
+          <div className='grid grid--thick_guttered hide_on_tablet_portrait'>
+            <div className='col'>
+              <NavLink className='header__link' to='/projects'>
+                {this.context.locale === 'fr-CA' ? 'Projets' : 'Projects'}
+              </NavLink>
+            </div>
+            <div className='col'>
+              <NavLink className='header__link' to='/about'>
+                {this.context.locale === 'fr-CA' ? 'À propos' : 'About us'}
+              </NavLink>
+            </div>
+            <div className='col'>
+              <NavLink className='header__link' to='/contact'>
+                {this.context.locale === 'fr-CA' ? 'Contact' : 'Contact'}
+              </NavLink>
+            </div>
+            <div className='col'>
+              <a className='header__link' onClick={()=> {
+                this.context.selectLocale(this.context.locale === 'fr-CA' ? 'en-US' : 'fr-CA')
+                this.context.fetchContent()
+              }}>{this.context.locale === 'fr-CA' ? 'En' : 'Fr'}</a>
+            </div>
           </div>
-          <div className='col'>
-            <NavLink className='header__link' to='/about'>À propos</NavLink>
+        </div>
+      </header>
+      <details className='menu tablet_portrait_only'>
+        <summary ref={summary => this.summary = summary} />
+
+        <div className='menu__container grid grid--vertically_spaced'>
+          <div className='col menu__item'>
+            <NavLink className='header__link' to='/projects' onClick={e => this.summary.click()}>
+              {this.context.locale === 'fr-CA' ? 'Projets' : 'Projects'}
+            </NavLink>
           </div>
-          <div className='col'>
-            <NavLink className='header__link' to='/contact'>Contact</NavLink>
+          <div className='col menu__item'>
+            <NavLink className='header__link' to='/about' onClick={e => this.summary.click()}>
+              {this.context.locale === 'fr-CA' ? 'À propos' : 'About us'}
+            </NavLink>
           </div>
-          <div className='col'>
+          <div className='col menu__item'>
+            <NavLink className='header__link' to='/contact' onClick={e => this.summary.click()}>
+              {this.context.locale === 'fr-CA' ? 'Contact' : 'Contact'}
+            </NavLink>
+          </div>
+          <div className='col menu__item'>
             <a className='header__link' onClick={()=> {
               this.context.selectLocale(this.context.locale === 'fr-CA' ? 'en-US' : 'fr-CA')
               this.context.fetchContent()
             }}>{this.context.locale === 'fr-CA' ? 'En' : 'Fr'}</a>
           </div>
         </div>
-      </div>
-    </header>
+      </details>
+    </>
   }
 }

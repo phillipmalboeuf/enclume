@@ -11,8 +11,12 @@ header {
   pointer-events: none;
   // background: fade-out($white, 0.05);
 
-  a, button, .overlay {
+  a, button, .menu {
     pointer-events: auto;
+  }
+
+  @media #{$tablet_portrait} {
+    padding: $rythm/2;
   }
 }
 
@@ -33,6 +37,6 @@ header {
     }
 
     &.headroom--unpinned {
-      transform: translateY(-166%);
+      transform: translateY(-100%);
     }
   }

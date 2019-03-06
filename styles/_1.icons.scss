@@ -38,6 +38,15 @@
     color: $orange;
   }
 
+  &.icon--anvil_orange {
+    @media #{$tablet_portrait} {
+      width: 100vw;
+      height: auto;
+      top: auto;
+      bottom: 0;
+    }
+  }
+
   &.icon--anvil_blue {
     color: $blue;
     width: 100vw;
@@ -63,6 +72,11 @@
     width: 100vw;
     height: auto;
     z-index: -1;
+
+    @media #{$tablet_portrait} {
+      width: auto;
+      height: 100%;
+    }
 
     path:nth-child(1) {
       fill: $blue--dark;

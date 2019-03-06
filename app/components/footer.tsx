@@ -35,6 +35,7 @@ export class Footer extends React.Component<Props, State> {
         
 
         <div className='grid grid--thick_guttered'>
+          <div className='col col--tablet_portrait--12of12' />
           <div className='col'>
             <a href='tel:514-756-4113' target='_blank'>514-756-4113</a><br />
             <a href='mailto:info@enclume.ca' target='_blank'>info@enclume.ca</a>

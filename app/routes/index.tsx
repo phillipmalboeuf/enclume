@@ -23,7 +23,6 @@ export class Index extends React.Component<Props, State> {
   }
 
   public render() {
-    console.log(this.context.content.homepage.fields.projectsGridSizes)
     return <>
       <main role='main'>
         <div className='grid grid--full grid--middle grid--center hero'>
@@ -45,9 +44,9 @@ export class Index extends React.Component<Props, State> {
                 <h3>
                   <LE c={project} k='title' />
                 </h3>
-
-                <div className='normal_bottom' />
               </Link>
+
+              <div className='normal_bottom hide_on_tablet_portrait' />
             </div>)}
           </div>
           
