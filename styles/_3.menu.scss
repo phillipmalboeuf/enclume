@@ -19,7 +19,7 @@
     font-size: $medium_size;
     text-align: center;    
     padding: $rythm/2;
-    background: fade-out($white, 0.05);
+    // background: fade-out($white, 0.05);
 
     &::-webkit-details-marker {
       display: none;
@@ -32,7 +32,7 @@
 
   &[open] {
     summary {
-      background: fade-out($green--light, 0.05);
+      // background: fade-out($green--light, 0.05);
 
       &:before {
         content: "fermer";
