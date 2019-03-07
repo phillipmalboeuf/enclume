@@ -8,7 +8,7 @@ interface Props {
 }
 
 const url = (src: string, size: number): string => {
-  return `${src}`
+  return `https:${src.replace('images.ctfassets.net/esgvtsxg5drv', 'enclume.imgix.net')}?auto=format,compress&w=${size}`
 }
 
 export const Picture: React.SFC<Props> = props => {
