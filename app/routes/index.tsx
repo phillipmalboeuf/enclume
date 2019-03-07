@@ -54,7 +54,7 @@ export class Index extends React.Component<Props, State> {
       </main>
 
       <div className='padded padded--thick padded--big_top overflow_top text_center teal_back'>
-        <Link to='/projects' className='underline big'><E c='homepage' k='cta' /></Link>
+        <Link to='/projects' className='underline big' style={{ zIndex: 1 }}><E c='homepage' k='cta' /></Link>
       </div>
     </>
   }

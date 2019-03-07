@@ -9,4 +9,13 @@ svg {
   &.img--full {
     width: 100%;
   }
+
+  a & {
+    filter: saturate(0);
+  }
+
+  a:focus &,
+  a:hover & {
+    filter: saturate(1);
+  }
 }
