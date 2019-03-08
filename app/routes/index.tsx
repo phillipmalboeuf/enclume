@@ -15,11 +15,25 @@ export class Index extends React.Component<Props, State> {
   static contextType = AppContext
   context!: React.ContextType<typeof AppContext>
 
+  private parallax: HTMLDivElement[] = []
+  private vertical: boolean
+
   constructor(props: Props) {
     super(props)
   }
 
   componentDidMount() {
+    this.scroll()
+    this.vertical = window.innerWidth - 400 < window.innerHeight
+    window.addEventListener('scroll', this.scroll.bind(this))
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.scroll.bind(this))
+  }
+
+  private scroll() {
+    this.parallax.forEach(p => p.style.transform = `translateY(-${window.scrollY/10}px)`)
   }
 
   public render() {
@@ -28,7 +42,7 @@ export class Index extends React.Component<Props, State> {
         <div className='grid grid--full grid--middle grid--center hero'>
           <PE c='homepage' k='hero' />
           <Icon i='anvil_hero' />
-          <Icon i='logo' />
+          <div ref={element => this.parallax.push(element)}><Icon i='logo' /></div>
         </div>
 
         <div className='padded padded--big_top relative nooverflow'>
@@ -38,7 +52,7 @@ export class Index extends React.Component<Props, State> {
           <div className='big_bottom' />
 
           <div className='grid grid--thick_guttered grid--spaced_around grid--middle'>
-            {this.context.content.homepage.fields.projects.map((project: any, index: number)=> <div key={project.fields.url} className={`col col--${this.context.content.homepage.fields.projectsGridSizes[index]}of12 col--tablet_portrait--12of12`}>
+            {this.context.content.homepage.fields.projects.map((project: any, index: number)=> <div key={project.fields.url} ref={element => this.parallax.push(element)} className={`col col--${this.context.content.homepage.fields.projectsGridSizes[index]}of12 col--tablet_portrait--12of12`}>
               <Link to={`/projects/${project.fields.url}`}>
                 <div className='small_bottom'><LPE c={project} k='hero' /></div>
                 <h3>

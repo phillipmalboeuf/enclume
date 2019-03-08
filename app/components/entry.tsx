@@ -3,7 +3,7 @@ import * as React from 'react'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { AppContext } from '../contexts/app'
-import { Picture } from './picture';
+import { Picture } from './picture'
 
 
 export class E extends React.PureComponent<{
