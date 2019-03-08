@@ -48,7 +48,7 @@ export class Index extends React.Component<Props, State> {
         <div className='padded padded--big_top relative nooverflow'>
           <Icon i='anvil_homepage' />
 
-          <h2 className='max_width max_width--tight'><E c='homepage' k='description' /></h2>
+          <h2 ref={element => this.parallax.push(element)} className='max_width max_width--tight'><E c='homepage' k='description' /></h2>
           <div className='big_bottom' />
 
           <div className='grid grid--thick_guttered grid--spaced_around grid--middle'>
