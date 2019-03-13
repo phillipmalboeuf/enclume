@@ -3,13 +3,12 @@
 
 header {
   position: fixed;
-  padding: $rythm;
+  padding: $rythm/1.33 $rythm;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   pointer-events: none;
-  // background: fade-out($white, 0.05);
 
   a, button, .menu {
     pointer-events: auto;
@@ -30,13 +29,19 @@ header {
   }
 
   .headroom {
-    transition: transform $fast;
+    transition: transform $fast, background-color $fast;
+    background-color: fade-out($beige, 1);
+
+    &.headroom--not-top {
+      background-color: fade-out($beige, 0.05);
+    }
 
     &.headroom--pinned {
       transform: translateY(0);
     }
 
     &.headroom--unpinned {
+      background-color: fade-out($beige, 1);
       transform: translateY(-100%);
     }
   }
