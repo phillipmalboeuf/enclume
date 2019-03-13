@@ -27,7 +27,11 @@ export class Projects extends React.Component<Props, State> {
   public render() {
     let current_category = query.parse(this.props.location.search).category
     return <>
-      <main className={`${current_category ? current_category === 'planning' ? 'blue_back' : 'light_green_back' : ''}`} role='main'>
+      <main className={`${current_category ? ({
+        planning: 'light_green_back',
+        participation: 'red_back',
+        research: 'beige_back'
+      } as any)[current_category as string] : ''}`} role='main'>
         <div className='padded padded--big_top'>
           <nav className='grid grid--guttered'>
             <div className='col col--tablet_portrait--12of12'><Link className={`header__link${current_category ? '' : ' active'}`} to='/projects'>Tous</Link></div>

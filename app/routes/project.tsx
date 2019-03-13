@@ -17,8 +17,21 @@ export class ProjectsProject extends Index {
     let previous = this.context.content.projects.find(project => project.fields.url === project.fields.previous)
     let next = this.context.content.projects.find(project => project.fields.url === project.fields.next)
     return <>
-      <main className='' role='main'>
-        {/* <Icon i='anvil_green' /> */}
+      <main className='relative' role='main'>
+        {({
+          planning: <>
+          <Icon i='anvil_project_green_top' />
+          <Icon i='anvil_project_green_bottom' />
+          </>,
+          participation: <>
+          <Icon i='anvil_project_red_top' />
+          <Icon i='anvil_project_red_bottom' />
+          </>,
+          research: <>
+          <Icon i='anvil_project_beige_top' />
+          <Icon i='anvil_project_beige_bottom' />
+          </>
+        } as any)[project.fields.category.fields.key]}
 
         <div className='padded padded--big_top'>
           <div className='padded medium_bottom max_width max_width--wide max_width--center'>
@@ -31,7 +44,7 @@ export class ProjectsProject extends Index {
             <LRE c={project} k={'description'} />
           </div>
 
-          <div ref={element => this.parallax.push({ e: element, l: -2 })} className='grid grid--thick_guttered grid--spaced_around grid--middle'>
+          <div ref={element => this.parallax.push({ e: element, l: 2 })} className='grid grid--thick_guttered grid--spaced_around grid--middle'>
             {project.fields.gallery.map((photo: any, index: number)=> <div key={photo.fields.file.url} className={`col col--${project.fields.galleryGridSizes[index]}of12 col--tablet_portrait--12of12`}>
               <Picture src={photo.fields.file.url} />
 

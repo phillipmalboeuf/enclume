@@ -90,4 +90,32 @@
       fill: $blue;
     }
   }
+
+  &.icon--anvil_project_green_top,
+  &.icon--anvil_project_green_bottom,
+  &.icon--anvil_project_red_top,
+  &.icon--anvil_project_red_bottom,
+  &.icon--anvil_project_beige_top,
+  &.icon--anvil_project_beige_bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    max-width: none;
+    height: auto;
+    color: $green--light;
+  }
+
+  &.icon--anvil_project_green_bottom,
+  &.icon--anvil_project_red_bottom,
+  &.icon--anvil_project_beige_bottom {
+    top: auto;
+    bottom: 0;
+  }
+
+  &.icon--anvil_project_red_top { color: $red; }
+  &.icon--anvil_project_red_bottom { color: $red; }
+  &.icon--anvil_project_beige_top { color: $beige; width: 66vw; }
+  &.icon--anvil_project_beige_bottom { color: $beige; }
 }
