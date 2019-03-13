@@ -58,7 +58,7 @@ h1 {
   font-size: $big_size;
   line-height: $rythm;
   font-weight: normal;
-  margin-bottom: $rythm*2;
+  margin-bottom: $rythm;
 
   &.h1--giant {
     font-size: $giant_size;
@@ -127,7 +127,7 @@ h6 {
 // #PARAGRAPHS
 
 p {
-  margin: 0 0 $rythm*1.5;
+  margin: 0 0 $rythm/2;
   white-space: pre-line;
 
   &:last-child {
@@ -280,6 +280,7 @@ sub {
 .red_back { background-color: $red; }
 .teal_back { background-color: $teal; }
 .blue_back { background-color: $blue; }
+.orange_back { background-color: $orange; }
 .beige_back { background-color: $beige; }
 .image_back { background-size: cover; background-position: center; }
 

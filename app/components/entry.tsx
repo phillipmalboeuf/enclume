@@ -61,3 +61,15 @@ export class LPE extends React.PureComponent<{
     return <Picture src={this.props.c.fields[this.props.k].fields.file.url} small={this.props.small} />
   }
 }
+
+export class LRE extends React.PureComponent<{
+  c: { fields: { [key:string]: any } },
+  k: string
+}, {}> {
+  static contextType = AppContext
+  context!: React.ContextType<typeof AppContext>
+
+  render() {
+    return documentToReactComponents(this.props.c.fields[this.props.k])
+  }
+}

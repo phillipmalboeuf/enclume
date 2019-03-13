@@ -5,27 +5,17 @@ import { Link, RouteComponentProps, NavLink } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
 import { Picture } from '../components/picture'
-import { LE, LPE } from '../components/entry'
+import { LE, LPE, RE, LRE } from '../components/entry'
+import { Index } from './index'
 
 
-interface Props extends RouteComponentProps<any> {}
-interface State {}
 
-
-export class ProjectsProject extends React.Component<Props, State> {
-  static contextType = AppContext
-  context!: React.ContextType<typeof AppContext>
-
-  constructor(props: Props) {
-    super(props)
-  }
-
-  componentDidMount() {
-  }
+export class ProjectsProject extends Index {
 
   public render() {
     let project = this.context.content.projects.find(project => project.fields.url === this.props.match.params.project)
-    
+    let previous = this.context.content.projects.find(project => project.fields.url === project.fields.previous)
+    let next = this.context.content.projects.find(project => project.fields.url === project.fields.next)
     return <>
       <main className='' role='main'>
         {/* <Icon i='anvil_green' /> */}
@@ -35,18 +25,31 @@ export class ProjectsProject extends React.Component<Props, State> {
             <LPE c={project} k={'hero'} />
           </div>
 
-          <h1><LE c={project} k={'title'} /></h1>
+          <h1 ref={element => this.parallax.push({ e: element, l: 1 })}><LE c={project} k={'title'} /></h1>
 
-          <div className='big_bottom' />
+          <div ref={element => this.parallax.push({ e: element, l: 1.5 })} className='medium_bottom max_width'>
+            <LRE c={project} k={'description'} />
+          </div>
 
-          {/* <p>Le mandat consistait à réaliser une recherche historique et architecturale 
-          de la caserne 26, aussi connue comme l’ancien hôtel de ville De Lorimier,
-          située au 2151 avenue du Mont-Royal Est.</p>
+          <div ref={element => this.parallax.push({ e: element, l: -2 })} className='grid grid--thick_guttered grid--spaced_around grid--middle'>
+            {project.fields.gallery.map((photo: any, index: number)=> <div key={photo.fields.file.url} className={`col col--${project.fields.galleryGridSizes[index]}of12 col--tablet_portrait--12of12`}>
+              <Picture src={photo.fields.file.url} />
 
-          <p>La recherche a permis de mieux comprendre 
-          l’évolution de ce bâtiment, sa logique d’implantation dans l’ancienne municipalité De Lorimier, ses influences stylistiques, etc. L’étude a également l’élaboration de recommandations quant à la mise en valeur des éléments caractéristiques du lieu dans le cadre d’un éventuel projet d’intervention.</p> */}
+              <div className='normal_bottom hide_on_tablet_portrait' />
+            </div>)}
+          </div>
         </div>
       </main>
+      <div className='grid'>
+        <Link to={previous.fields.url} className='col col--6of12 col--tablet_portrait--12of12 grid grid--spaced grid--middle orange_back padded'>
+          <span className='big' style={{ transform: 'rotate(90deg)' }}>↓</span>
+          <h3 className='flat_bottom'><LE c={previous} k={'title'} /></h3>
+        </Link>
+        <Link to={next.fields.url} className='col col--6of12 col--tablet_portrait--12of12 grid grid--spaced grid--middle green_back padded'>
+          <h3 className='flat_bottom'><LE c={next} k={'title'} /></h3>
+          <span className='big' style={{ transform: 'rotate(-90deg)' }}>↓</span>
+        </Link>
+      </div>
     </>
   }
 }

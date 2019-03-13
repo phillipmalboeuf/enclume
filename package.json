@@ -57,7 +57,7 @@
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
     "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.11.0",
+    "parcel-bundler": "^1.12.1",
     "sass": "^1.17.2",
     "typescript": "^3.3.3333"
   }
