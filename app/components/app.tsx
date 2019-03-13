@@ -13,9 +13,12 @@ import { Footer } from './footer'
 interface Props {}
 interface State {
   content: {
-    [key:string]: {
-      [key:string]: any
-    }
+    homepage: { fields: { [key:string]: any } },
+    contact: { fields: { [key:string]: any } },
+    categories: { fields: { [key:string]: any } }[],
+    projects: { fields: { [key:string]: any } }[],
+    team_members: { fields: { [key:string]: any } }[],
+    collaborators: { fields: { [key:string]: any } }[]
   },
   locale: any
 }

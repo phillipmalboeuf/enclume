@@ -15,7 +15,7 @@ header {
   }
 
   @media #{$tablet_portrait} {
-    padding: $rythm/2;
+    padding: $rythm/2.33 $rythm/2 $rythm/3;
   }
 }
 

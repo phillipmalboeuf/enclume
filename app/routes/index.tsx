@@ -16,7 +16,6 @@ export class Index extends React.Component<Props, State> {
   context!: React.ContextType<typeof AppContext>
 
   protected parallax: { e: HTMLDivElement, l: number }[] = []
-  private vertical: boolean
   private position: number
   private animation: number
 
@@ -26,14 +25,17 @@ export class Index extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.scroll()
-    this.vertical = window.innerWidth - 400 < window.innerHeight
-    this.position = 0
-    this.animation = window.requestAnimationFrame(this.scroll)
+    if (!this.context.phone) {
+      this.scroll()
+      this.position = 0
+      this.animation = window.requestAnimationFrame(this.scroll)
+    }
   }
 
   componentWillUnmount(){
-    window.cancelAnimationFrame(this.animation)
+    if (!this.context.phone) {
+      window.cancelAnimationFrame(this.animation)
+    }
   }
 
   private scroll() {

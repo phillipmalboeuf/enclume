@@ -8,11 +8,8 @@ import { LPE, LE } from '../components/entry'
 import { Index } from './index'
 
 
-interface Props extends RouteComponentProps<any> {}
-interface State {}
-
-
 export class About extends Index {
+  
 
   public render() {
     return <>
