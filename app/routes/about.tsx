@@ -4,23 +4,15 @@ import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
-import { LPE, LE } from '../components/entry';
+import { LPE, LE } from '../components/entry'
+import { Index } from './index'
 
 
 interface Props extends RouteComponentProps<any> {}
 interface State {}
 
 
-export class About extends React.Component<Props, State> {
-  static contextType = AppContext
-  context!: React.ContextType<typeof AppContext>
-
-  constructor(props: Props) {
-    super(props)
-  }
-
-  componentDidMount() {
-  }
+export class About extends Index {
 
   public render() {
     return <>
@@ -33,7 +25,7 @@ export class About extends React.Component<Props, State> {
           </div>
 
           <div className='grid grid--guttered'>
-            <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--6of12 col--phone--12of12'>
+            <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--6of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 2 })}>
               <p>Notre travail fait foi d’une conscience
               environnementale, d’un souci d’esthétisme, 
               d’une volonté d’inspirer sans compromettre 
@@ -49,7 +41,7 @@ export class About extends React.Component<Props, State> {
               et la collaboration. Nous œuvrons ensemble, 
               nous travaillons avec vous.</p>
             </div>
-            <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--6of12 col--phone--12of12'>
+            <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--6of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 1 })}>
               <p>Nous ne sommes pas guidés par l’appât 
               du gain. Nos personnalités colorent nos
               ouvrages. Nous sommes fiers de ce que
@@ -64,22 +56,22 @@ export class About extends React.Component<Props, State> {
           <div className='big_bottom' />
 
           <div className='grid grid--guttered grid--middle'>
-            <div className='col col--12of12'>
+            <div className='col col--12of12' ref={element => this.parallax.push({ e: element, l: 1.5 })}>
               <h6>Champs d’expertises</h6>
             </div>
-            <div className='col col--6of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <div className='col col--6of12 col--tablet_portrait--9of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 1.5 })}>
               {this.context.content.categories.map(category => <h3>{category.fields.title}</h3>)}
             </div>
-            <div className='col col--5of12 col--tablet_landscape--6of12 col--tablet_portrait--9of12 col--phone--12of12'><p className='medium'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad</p></div>
+            <div className='col col--5of12 col--tablet_landscape--6of12 col--tablet_portrait--9of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 0.75 })}><p className='medium'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad</p></div>
           </div>
 
           <div className='big_bottom' />
 
           <div className='grid grid--guttered'>
-            <div className='col col--12of12'>
+            <div className='col col--12of12' ref={element => this.parallax.push({ e: element, l: 1.5 })}>
               <h6>L'équipe</h6>
             </div>
-            <div className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12'><p className='big'>Nous avons une équipe multidisciplinaire et
+            <div className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 3 })}><p className='big'>Nous avons une équipe multidisciplinaire et
 passionnée par une approche intégrée en 
 aménagement. Pour cette raison, nous réalisons 
 des mandats dans une grande diversité des sphères 
@@ -107,13 +99,13 @@ de l’aménagement, qu’il soit rural ou urbain.</p></div>
           <div className='big_bottom' />
 
           <div className='grid grid--tight_guttered'>
-            <div className='col col--12of12'>
+            <div className='col col--12of12' ref={element => this.parallax.push({ e: element, l: -1.5 })}>
               <h6>Collaborateurs</h6>
             </div>
-            <div className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12'><p className='big'>L’Enclume possède un réseau de collaborateurs spécialisés avec qui elle s’allie pour offrir des services plus pointus en cas de besoin.</p></div>
+            <div ref={element => this.parallax.push({ e: element, l: -3 })} className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12'><p className='big'>L’Enclume possède un réseau de collaborateurs spécialisés avec qui elle s’allie pour offrir des services plus pointus en cas de besoin.</p></div>
 
             <div className='col col--12of12'></div>
-            {this.context.content.collaborators.map(collaborator => <div key={collaborator.fields.name} className='col col--9of12 col--tablet_landscape--11of12 col--tablet_portrait--12of12'>
+            {this.context.content.collaborators.map(collaborator => <div key={collaborator.fields.name} className='col col--9of12 col--tablet_landscape--11of12 col--tablet_portrait--12of12' ref={element => this.parallax.push({ e: element, l: -0.5 })}>
               <hr />
               <a href={`${collaborator.fields.url}`} target='_blank'>
                 <div className='grid grid--guttered grid--middle'>
