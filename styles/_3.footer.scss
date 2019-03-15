@@ -11,4 +11,8 @@ footer {
   a:focus {
     color: $beige;
   }
+
+  @media #{$tablet_portrait} {
+    padding: $rythm/1.5 $rythm/1.5 $rythm*2.5;
+  }
 }

@@ -94,7 +94,7 @@ main {
 .small_top { margin-top: $rythm/2; }
 .normal_top { margin-top: $rythm; }
 .medium_top { margin-top: $rythm*2; }
-.overflow_top { margin-top: -$rythm*5; @media #{$tablet_portrait} { margin-top: -$rythm*2; } }
+.overflow_top { margin-top: -$rythm*6; z-index: 3; @media #{$tablet_portrait} { margin-top: 0; } }
 
 .spaced {
   margin: 0 0.5em 0 1em;

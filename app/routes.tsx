@@ -7,7 +7,7 @@ import { FourOFour } from './routes/404'
 import { Contact } from './routes/contact'
 import { About } from './routes/about'
 import { Projects } from './routes/projects'
-import { ProjectsProject } from './routes/project';
+import { ProjectsProject } from './routes/project'
 
 
 

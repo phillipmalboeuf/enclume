@@ -12,10 +12,12 @@ svg {
 
   a & {
     filter: saturate(0);
+    transition: filter $fast, transform $fast;
   }
 
   a:focus &,
   a:hover & {
     filter: saturate(1);
+    transform: scale(0.98);
   }
 }

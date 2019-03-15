@@ -37,11 +37,11 @@ header {
     }
 
     &.headroom--pinned {
-      transform: translateY(0);
+      // transform: translateY(0);
     }
 
     &.headroom--unpinned {
-      background-color: fade-out($beige, 1);
-      transform: translateY(-100%);
+      // background-color: fade-out($beige, 1);
+      // transform: translateY(-100%);
     }
   }
