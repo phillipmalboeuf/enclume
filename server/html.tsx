@@ -43,14 +43,14 @@ export const HTML: React.SFC<Props> = (props) => {
     <body>
 
       <section className='app' id='app'>
-        <Loading />
-        <Header />
         <StaticRouter location={props.url} context={{}}>
           <>
+            <Loading />
+            <Header />
             {props.children}
+            <Footer />
           </>
         </StaticRouter>
-        <Footer />
       </section>
      
 
