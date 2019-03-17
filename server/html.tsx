@@ -3,14 +3,20 @@ import * as React from 'react'
 import { StaticRouter } from 'react-router-dom'
 
 import { AppContext } from '../app/contexts/app'
+import { Header } from '../app/components/header'
+import { Loading } from '../app/components/loading'
+import { Footer } from '../app/components/footer'
 
 interface Props {
   url: string,
   hostname: string,
   content: {
-    [key:string]: {
-      [key:string]: any
-    }
+    homepage: { fields: { [key:string]: any } },
+    contact: { fields: { [key:string]: any } },
+    categories: { fields: { [key:string]: any } }[],
+    projects: { fields: { [key:string]: any } }[],
+    team_members: { fields: { [key:string]: any } }[],
+    collaborators: { fields: { [key:string]: any } }[]
   },
   phone: boolean,
   locale?: any
@@ -37,11 +43,14 @@ export const HTML: React.SFC<Props> = (props) => {
     <body>
 
       <section className='app' id='app'>
+        <Loading />
+        <Header />
         <StaticRouter location={props.url} context={{}}>
           <>
             {props.children}
           </>
         </StaticRouter>
+        <Footer />
       </section>
      
 

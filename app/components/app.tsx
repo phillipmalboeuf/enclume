@@ -8,6 +8,7 @@ import { Routes } from '../routes'
 
 import { Header } from './header'
 import { Footer } from './footer'
+import { Loading } from './loading'
 
 
 interface Props {}
@@ -72,6 +73,7 @@ export class App extends React.Component<Props, State> {
     }}>
       <BrowserRouter>
         <>
+          <Loading />
           <Header />
           <Routes onRoute={()=> {
             window.scrollTo(0, 0)

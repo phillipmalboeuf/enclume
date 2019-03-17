@@ -51,11 +51,6 @@ export class Index extends React.Component<Props, State> {
   public render() {
     return <>
       <main role='main'>
-        <div className='grid grid--full grid--middle grid--center hero'>
-          <PE c='homepage' k='hero' />
-          <Icon i='anvil_hero' />
-          <div ref={element => this.parallax.push({ e: element, l: 1 })}><Icon i='logo' /></div>
-        </div>
 
         <div className='padded padded--big_top relative nooverflow'>
           <Icon i='anvil_homepage' />

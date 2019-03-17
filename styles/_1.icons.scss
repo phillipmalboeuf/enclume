@@ -1,5 +1,10 @@
 // #ICONS
 
+@keyframes hang {
+  0%    { transform: translateY(-6.66%) }
+  100%  { transform: translateY(6.66%) }
+}
+
 .icon {
   height: (32/$base) * 1rem;
   width: (32/$base) * 1rem;
@@ -66,6 +71,23 @@
     width: 100vw;
     height: 100vh;
     padding: 10vh 3vw;
+
+    polygon,
+    path {
+      animation: hang $slow*4 ease-in-out infinite alternate-reverse;
+    }
+
+    path:nth-child(2) {
+      animation-duration: $slow*3.5;
+    }
+
+    path:nth-child(3) {
+      animation-duration: $slow*4.2;
+    }
+
+    path:nth-child(4) {
+      animation-duration: $slow*3.33;
+    }
   }
 
   &.icon--anvil_homepage {
