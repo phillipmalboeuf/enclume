@@ -5,6 +5,7 @@ import { Link, RouteComponentProps } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
 import { E, PE, LPE, LE } from '../components/entry'
+import { OnScroll } from '../components/animations'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -55,16 +56,20 @@ export class Index extends React.Component<Props, State> {
         <div className='padded padded--big_top relative nooverflow'>
           <Icon i='anvil_homepage' />
 
-          <h2 ref={element => this.parallax.push({ e: element, l: 2 })} className='max_width max_width--tight'><E c='homepage' k='description' /></h2>
+          <h2 ref={element => this.parallax.push({ e: element, l: 2 })} className='max_width max_width--tight'>
+            <OnScroll><E c='homepage' k='description' /></OnScroll>
+          </h2>
           <div className='big_bottom' />
 
           <div className='grid grid--thick_guttered grid--spaced_around grid--middle'>
             {this.context.content.homepage.fields.projects.map((project: any, index: number)=> <div key={project.fields.url} ref={element => this.parallax.push({ e: element, l: 2 - (index % 3 === 0 ? 0.5 : index % 3 === 1 ? 1 : 0)  })} className={`col col--${this.context.content.homepage.fields.projectsGridSizes[index]}of12 col--tablet_portrait--12of12`}>
               <Link to={`/projects/${project.fields.url}`}>
-                <div className='small_bottom'><LPE c={project} k='hero' /></div>
-                <h3>
-                  <LE c={project} k='title' />
-                </h3>
+                <OnScroll>
+                  <div className='small_bottom'><LPE c={project} k='hero' /></div>
+                  <h3>
+                    <LE c={project} k='title' />
+                  </h3>
+                </OnScroll>
               </Link>
 
               <div className='normal_bottom hide_on_tablet_portrait' />
@@ -75,7 +80,7 @@ export class Index extends React.Component<Props, State> {
       </main>
 
       <div className='padded padded--thick overflow_top text_center teal_back'>
-        <Link to='/projects' className='big' style={{ zIndex: 1 }}><E c='homepage' k='cta' /></Link>
+        <OnScroll><Link to='/projects' className='big' style={{ zIndex: 1 }}><E c='homepage' k='cta' /></Link></OnScroll>
       </div>
     </>
   }

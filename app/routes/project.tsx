@@ -7,6 +7,7 @@ import { Icon } from '../components/icon'
 import { Picture } from '../components/picture'
 import { LE, LPE, RE, LRE } from '../components/entry'
 import { Index } from './index'
+import { OnScroll } from '../components/animations';
 
 
 
@@ -34,22 +35,22 @@ export class ProjectsProject extends Index {
         } as any)[project.fields.category.fields.key]}
 
         <div className='padded padded--big_top'>
-          <div className='padded medium_bottom max_width max_width--wide max_width--center'>
+          <OnScroll className='padded medium_bottom max_width max_width--wide max_width--center'>
             <LPE c={project} k={'hero'} />
-          </div>
+          </OnScroll>
 
-          <h1 ref={element => this.parallax.push({ e: element, l: 1 })}><LE c={project} k={'title'} /></h1>
+          <h1 ref={element => this.parallax.push({ e: element, l: 1 })}><OnScroll><LE c={project} k={'title'} /></OnScroll></h1>
 
           <div ref={element => this.parallax.push({ e: element, l: 1.5 })} className='medium_bottom max_width'>
-            <LRE c={project} k={'description'} />
+            <OnScroll><LRE c={project} k={'description'} /></OnScroll>
           </div>
 
           <div ref={element => this.parallax.push({ e: element, l: 2 })} className='grid grid--thick_guttered grid--spaced_around grid--middle'>
-            {project.fields.gallery.map((photo: any, index: number)=> <div key={photo.fields.file.url} className={`col col--${project.fields.galleryGridSizes[index]}of12 col--tablet_portrait--12of12`}>
+            {project.fields.gallery.map((photo: any, index: number)=> <OnScroll key={photo.fields.file.url} className={`col col--${project.fields.galleryGridSizes[index]}of12 col--tablet_portrait--12of12`}>
               <Picture src={photo.fields.file.url} />
 
               <div className='normal_bottom hide_on_tablet_portrait' />
-            </div>)}
+            </OnScroll>)}
           </div>
         </div>
       </main>

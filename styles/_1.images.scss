@@ -10,14 +10,29 @@ svg {
     width: 100%;
   }
 
-  a & {
+  a:not(.a--no_hover) & {
     filter: saturate(0);
     transition: filter $fast, transform $fast;
   }
 
-  a:focus &,
-  a:hover & {
+  a:not(.a--no_hover):focus &,
+  a:not(.a--no_hover):hover & {
     filter: saturate(1);
     transform: scale(0.98);
   }
 }
+
+  .img_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity $fast;
+
+    a:focus &,
+    a:hover & {
+      opacity: 1;
+    }
+  }

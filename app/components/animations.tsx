@@ -109,7 +109,7 @@ export class OnScroll extends React.Component<OnScrollProps, OnScrollState> {
   }
 
   componentDidMount() {
-    this.position = 0
+    // this.position = 0
     this.animation = window.requestAnimationFrame(this.scroll)
   }
 
@@ -119,7 +119,7 @@ export class OnScroll extends React.Component<OnScrollProps, OnScrollState> {
 
   scroll() {
     if(this.position != window.scrollY) {
-      if (window.scrollY > this.element.offsetTop + (this.element.offsetHeight / 2) - window.innerHeight) {
+      if (window.scrollY > this.element.offsetTop + 100 - window.innerHeight) {
         this.setState({
           visible: true
         })
@@ -136,8 +136,8 @@ export class OnScroll extends React.Component<OnScrollProps, OnScrollState> {
     return <Spring config={{
       tension: 200,
       friction: 100
-    }} from={{ opacity: 0 }} to={{ opacity: this.state.visible ? 1 : 0 }}>
-      {styles => <div ref={element => this.element = element} style={styles}>{this.props.children}</div>}
+    }} from={{ opacity: 0, transform: 'translateY(10%)' }} to={{ opacity: this.state.visible ? 1 : 0, transform: this.state.visible ? 'translateY(0%)' : 'translateY(10%)' }}>
+      {styles => <div ref={element => this.element = element} style={styles} className={this.props.className}>{this.props.children}</div>}
     </Spring>
   }
 }

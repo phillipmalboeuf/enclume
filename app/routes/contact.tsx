@@ -5,6 +5,7 @@ import { Link, RouteComponentProps } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
 import { E, RE } from '../components/entry'
+import { Fade, OnScroll } from '../components/animations'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -28,7 +29,7 @@ export class Contact extends React.Component<Props, State> {
         <Icon i='anvil_orange' />
 
         <div className='grid grid--full grid--middle'>
-          <div className='padded'>
+          <OnScroll className='padded'>
             <p className='big'>
               <a href={`tel:${this.context.content.contact.fields.phoneNumber}`} target='_blank'><E c='contact' k='phoneNumber' /></a><br />
               <a href={`mailto:${this.context.content.contact.fields.emailAddress}`} target='_blank'><E c='contact' k='emailAddress' /></a>
@@ -43,7 +44,7 @@ export class Contact extends React.Component<Props, State> {
             <div className='max_width max_width--tight underline_links'>
               <RE c='contact' k='information' />
             </div>
-          </div>
+          </OnScroll>
           
         </div>
       </main>

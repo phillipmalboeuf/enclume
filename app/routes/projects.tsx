@@ -7,6 +7,7 @@ import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
 import { Picture } from '../components/picture'
 import { LE, LPE } from '../components/entry'
+import { OnScroll } from '../components/animations'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -34,10 +35,10 @@ export class Projects extends React.Component<Props, State> {
       } as any)[current_category as string] : ''}`} role='main'>
         <div className='padded padded--big_top'>
           <nav className='grid grid--guttered'>
-            <div className='col col--tablet_portrait--12of12'><Link className={`header__link${current_category ? '' : ' active'}`} to='/projects'>Tous</Link></div>
-            {this.context.content.categories.map(category => <div className='col' key={category.fields.title}>
+            <OnScroll className='col col--tablet_portrait--12of12'><Link className={`header__link${current_category ? '' : ' active'}`} to='/projects'>Tous</Link></OnScroll>
+            {this.context.content.categories.map(category => <OnScroll className='col' key={category.fields.title}>
               <Link className={`header__link${current_category === category.fields.key ? ' active' : ''}`} to={`/projects?category=${category.fields.key}`}><LE c={category} k='title' /></Link>
-            </div>)}
+            </OnScroll>)}
           </nav>
 
           <div className='normal_bottom' />
@@ -45,10 +46,12 @@ export class Projects extends React.Component<Props, State> {
           <div className='grid grid--guttered'>
             {this.context.content.projects.filter(project => !current_category || project.fields.category.fields.key === current_category).map(project => <div key={project.fields.url} className='col col--4of12 col--tablet_landscape--6of12 col--tablet_portrait--12of12'>
               <Link to={`/projects/${project.fields.url}`}>
-                <div className='small_bottom'><LPE c={project} k='hero' /></div>
-                <p className='slight'>
-                  <LE c={project} k='title' />
-                </p>
+                <OnScroll>
+                  <div className='small_bottom'><LPE c={project} k='hero' /></div>
+                  <p className='slight'>
+                    <LE c={project} k='title' />
+                  </p>
+                </OnScroll>
               </Link>
             </div>)}
           </div>
