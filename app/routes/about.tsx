@@ -7,6 +7,7 @@ import { Icon } from '../components/icon'
 import { LPE, LE } from '../components/entry'
 import { Index } from './index'
 import { OnScroll } from '../components/animations'
+import { PageTransition } from '../components/page_transition'
 
 
 export class About extends Index {
@@ -14,6 +15,7 @@ export class About extends Index {
 
   public render() {
     return <>
+      <PageTransition />
       <main className='blue_back' role='main'>
         <Icon i='anvil_blue' />
 

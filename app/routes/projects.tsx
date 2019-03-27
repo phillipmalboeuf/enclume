@@ -8,6 +8,7 @@ import { Icon } from '../components/icon'
 import { Picture } from '../components/picture'
 import { LE, LPE } from '../components/entry'
 import { OnScroll } from '../components/animations'
+import { PageTransition } from '../components/page_transition'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -28,6 +29,7 @@ export class Projects extends React.Component<Props, State> {
   public render() {
     let current_category = query.parse(this.props.location.search).category
     return <>
+      <PageTransition />
       <main className={`${current_category ? ({
         planning: 'light_green_back',
         participation: 'red_back',

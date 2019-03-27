@@ -7,7 +7,8 @@ import { Icon } from '../components/icon'
 import { Picture } from '../components/picture'
 import { LE, LPE, RE, LRE } from '../components/entry'
 import { Index } from './index'
-import { OnScroll } from '../components/animations';
+import { OnScroll } from '../components/animations'
+import { PageTransition } from '../components/page_transition'
 
 
 
@@ -18,6 +19,7 @@ export class ProjectsProject extends Index {
     let previous = this.context.content.projects.find(project => project.fields.url === project.fields.previous)
     let next = this.context.content.projects.find(project => project.fields.url === project.fields.next)
     return <>
+      <PageTransition />
       <main className='relative' role='main'>
         {({
           planning: <>

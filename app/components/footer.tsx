@@ -25,33 +25,35 @@ export class Footer extends React.Component<Props, State> {
   }
 
   render() {
-    return <footer>
-      <div className='grid grid--spaced grid--middle'>
-        
-        <div className='grid grid--guttered grid--middle hide_on_phone'>
-          <div className='col'><Link to='/'><Icon i='logo' /></Link></div>
-          <div className='col hide_on_phone'><p>Atelier de<br />développement<br />territorial</p></div>
-        </div>
-        
+    return <>
+      <footer>
+        <div className='grid grid--spaced grid--middle'>
+          
+          <div className='grid grid--guttered grid--middle hide_on_phone'>
+            <div className='col'><Link to='/'><Icon i='logo' /></Link></div>
+            <div className='col hide_on_phone'><p>Atelier de<br />développement<br />territorial</p></div>
+          </div>
+          
 
-        <div className='grid grid--thick_guttered'>
-          <div className='col col--tablet_portrait--12of12 hide_on_phone' />
-          <div className='col'>
-            <a href='tel:514-756-4113' target='_blank'>514-756-4113</a><br />
-            <a href='mailto:info@enclume.ca' target='_blank'>info@enclume.ca</a>
-          </div>
-          <div className='col hide_on_phone'>
-            <a href='https://goo.gl/maps/jPr4tvzm1AB2' target='_blank'>5337, boulevard<br />
-            Saint-Laurent, #350<br />
-            Montréal, Québec<br />
-            H2T 1S5</a>
-          </div>
-          <div className='col'>
-            <a href='https://facebook.com' target='_blank'>facebook</a><br />
-            <a href='https://instagram.com' target='_blank'>instagram</a>
+          <div className='grid grid--thick_guttered'>
+            <div className='col col--tablet_portrait--12of12 hide_on_phone' />
+            <div className='col'>
+              <a href='tel:514-756-4113' target='_blank'>514-756-4113</a><br />
+              <a href='mailto:info@enclume.ca' target='_blank'>info@enclume.ca</a>
+            </div>
+            <div className='col hide_on_phone'>
+              <a href='https://goo.gl/maps/jPr4tvzm1AB2' target='_blank'>5337, boulevard<br />
+              Saint-Laurent, #350<br />
+              Montréal, Québec<br />
+              H2T 1S5</a>
+            </div>
+            <div className='col'>
+              <a href='https://facebook.com' target='_blank'>facebook</a><br />
+              <a href='https://instagram.com' target='_blank'>instagram</a>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   }
 }

@@ -30,6 +30,18 @@
     background: $blue--dark;
     pointer-events: none;
   }
+
+  &.hero--transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 550;
+    background: $beige;
+    pointer-events: none;
+
+    &.hero--transition--1 { background: $blue; }
+    &.hero--transition--2 { background: $blue--dark; }
+  }
 }
 
   

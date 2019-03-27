@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Spring, Trail } from 'react-spring'
+import { Spring, Trail, Transition as Trans, animated } from 'react-spring'
 
 
 interface Props {
@@ -14,13 +14,6 @@ export const Fade: React.SFC<Props> = (props) => {
   }} from={{ opacity: 0 }} to={{ opacity: 1 }}>
     {styles => <div style={styles} className={props.className}>{props.children}</div>}
   </Spring>
-}
-
-interface TrailProps {
-  items: {
-    key: string,
-    body: JSX.Element
-  }[]
 }
 
 export const FadeOut: React.SFC<Props> = (props) => {
@@ -70,7 +63,7 @@ export const Glide: React.SFC<Props> = (props) => {
     tension: 200,
     friction: 23
   }} from={{ transform: 'translateY(100%)' }} to={{ transform: 'translateY(0)' }}>
-    {styles => <div style={styles}>{props.children}</div>}
+    {styles => <div style={styles} className={props.className}>{props.children}</div>}
   </Spring>
 }
 
@@ -81,6 +74,23 @@ export const Bounce: React.SFC<Props> = (props) => {
   }} from={{ transform: 'translateY(-15%)' }} to={{ transform: 'translateY(0)' }}>
     {styles => <div style={styles}>{props.children}</div>}
   </Spring>
+}
+
+export const Transition: React.SFC<{ keys: string[] } & Props> = props => {
+  return <Trans
+    native
+    items={props.keys}
+    keys={true}
+    config={{
+      tension: 100,
+      friction: 42
+    }}
+    from={{ transform: 'translateY(100%)' }}
+    enter={{ transform: 'translateY(-100%)' }}>
+    {(loc, state) => style => <animated.div style={style} className={props.className}>
+      {props.children}
+    </animated.div>}
+  </Trans>
 }
 
 interface OnScrollProps {
@@ -133,11 +143,11 @@ export class OnScroll extends React.Component<OnScrollProps, OnScrollState> {
   }
 
   render() {
-    return <Spring config={{
+    return <Spring native config={{
       tension: 200,
       friction: 100
     }} from={{ opacity: 0, transform: 'translateY(10%)' }} to={{ opacity: this.state.visible ? 1 : 0, transform: this.state.visible ? 'translateY(0%)' : 'translateY(10%)' }}>
-      {styles => <div ref={element => this.element = element} style={styles} className={this.props.className}>{this.props.children}</div>}
+      {styles => <animated.div ref={element => this.element = element} style={styles} className={this.props.className}>{this.props.children}</animated.div>}
     </Spring>
   }
 }

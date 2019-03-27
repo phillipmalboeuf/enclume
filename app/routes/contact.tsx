@@ -6,6 +6,7 @@ import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
 import { E, RE } from '../components/entry'
 import { Fade, OnScroll } from '../components/animations'
+import { PageTransition } from '../components/page_transition'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -25,6 +26,7 @@ export class Contact extends React.Component<Props, State> {
 
   public render() {
     return <>
+      <PageTransition />
       <main className='teal_back' role='main'>
         <Icon i='anvil_orange' />
 

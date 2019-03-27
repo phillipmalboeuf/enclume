@@ -74,7 +74,7 @@
 
     polygon,
     path {
-      animation: hang $slow*2 ease-in-out infinite alternate;
+      animation: hang $slow*1.75 ease-in-out infinite alternate;
     }
 
     path:nth-child(2) {
@@ -83,11 +83,11 @@
     }
 
     path:nth-child(3) {
-      animation-duration: $slow*2;
+      animation-duration: $slow*2.5;
     }
 
     path:nth-child(4) {
-      animation-duration: $slow*2.2;
+      animation-duration: $slow*1.5;
       animation-direction: alternate-reverse;
     }
   }
@@ -142,4 +142,20 @@
   &.icon--anvil_project_red_bottom { color: $red; }
   &.icon--anvil_project_beige_top { color: $beige; width: 66vw; }
   &.icon--anvil_project_beige_bottom { color: $beige; }
+
+  &.icon--anvil_transition_green,
+  &.icon--anvil_transition_red,
+  &.icon--anvil_transition_orange {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    max-width: none;
+    height: auto;
+    color: $green--light;
+  }
+
+  &.icon--anvil_transition_red { color: $red; }
+  &.icon--anvil_transition_orange { color: $orange; width: auto; height: 100vw; }
 }
