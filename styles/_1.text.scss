@@ -8,9 +8,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: fade-out($color: $green--light, $amount: 0.5);
 
-  // @media #{$big_desktop} {
-  //   font-size: 15px;
-  // }
+  @media #{$big_desktop} {
+    font: #{20px}/#{$rythm/1.5} $body_font;
+  }
 
   // @media #{$tablet_portrait} {
   //   font-size: 14px;
@@ -157,6 +157,14 @@ a {
 
     &.big {
       border-bottom-width: 3px;
+    }
+
+    &.padded {
+      border: none;
+
+      & > h3 {
+        border-bottom: 3px solid;
+      }
     }
   }
 

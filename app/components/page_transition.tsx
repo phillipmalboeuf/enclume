@@ -4,9 +4,10 @@ import { Icon } from './icon'
 
 interface Props {}
 export const PageTransition: React.SFC<Props> = props => {
-  return <Transition keys={[]} className={`grid grid--full grid--middle grid--center hero hero--transition hero--transition--${Math.floor(Math.random() * 3)} relative`}>
+  const random = Math.floor(Math.random() * 3)
+  return <Transition keys={[]} className={`grid grid--full grid--middle grid--center hero hero--transition hero--transition--${random} relative`}>
     <Transition keys={['anvil']} className='grid grid--full grid--middle grid--center'>
-      <Icon key={'anvil'} i={['anvil_transition_red', 'anvil_transition_green', 'anvil_transition_orange'][Math.floor(Math.random() * 3)]} />
+      <Icon key={'anvil'} i={['anvil_transition_red', 'anvil_transition_green', 'anvil_transition_orange'][random]} />
     </Transition>
   </Transition>
 }

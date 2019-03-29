@@ -80,7 +80,7 @@ export const Transition: React.SFC<{ keys: string[] } & Props> = props => {
   return <Trans
     native
     items={props.keys}
-    keys={true}
+    keys={0}
     config={{
       tension: 100,
       friction: 42

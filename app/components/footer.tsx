@@ -30,7 +30,7 @@ export class Footer extends React.Component<Props, State> {
         <div className='grid grid--spaced grid--middle'>
           
           <div className='grid grid--guttered grid--middle hide_on_phone'>
-            <div className='col'><Link to='/'><Icon i='logo' /></Link></div>
+            <div className='col'><Link className='a--no_hover' to='/'><Icon i='logo' /></Link></div>
             <div className='col hide_on_phone'><p>Atelier de<br />développement<br />territorial</p></div>
           </div>
           

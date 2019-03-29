@@ -33,10 +33,11 @@
 
   &.hero--transition {
     position: fixed;
-    top: 0;
+    top: -25vh;
     left: 0;
+    height: 150vh;
     z-index: 550;
-    background: $beige;
+    background: $green--light;
     pointer-events: none;
 
     &.hero--transition--1 { background: $blue; }

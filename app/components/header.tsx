@@ -38,7 +38,7 @@ export class Header extends React.Component<Props, State> {
     return <>
       <header ref={element => this.element = element}>
         <div className='grid grid--spaced grid--center_on_tablet_portrait grid--middle'>
-          <Link to='/'><Icon i='logo' /></Link>
+          <Link className='a--no_hover' to='/'><Icon i='logo' /></Link>
 
           <div className='grid grid--thick_guttered hide_on_tablet_portrait'>
             <div className='col'>

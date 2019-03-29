@@ -1,8 +1,13 @@
 // #ICONS
 
 @keyframes hang {
-  0%    { transform: translateY(-3.33%) }
-  100%  { transform: translateY(3.33%) }
+  0%    { transform: translate3d(0, -3.33%, 0) }
+  100%  { transform: translate3d(0, 3.33%, 0) }
+}
+
+@keyframes hang2 {
+  0%    { transform: translate3d(0, 4%, 0) }
+  100%  { transform: translate3d(0, -2%, 0) }
 }
 
 .icon {
@@ -83,10 +88,12 @@
     }
 
     path:nth-child(3) {
+      animation-name: hang2;
       animation-duration: $slow*2.5;
     }
 
     path:nth-child(4) {
+      animation-name: hang2;
       animation-duration: $slow*1.5;
       animation-direction: alternate-reverse;
     }
@@ -153,7 +160,7 @@
     width: 100vw;
     max-width: none;
     height: auto;
-    color: $green--light;
+    color: $green;
   }
 
   &.icon--anvil_transition_red { color: $red; }
