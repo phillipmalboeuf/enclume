@@ -16,8 +16,8 @@ export class ProjectsProject extends Index {
 
   public render() {
     let project = this.context.content.projects.find(project => project.fields.url === this.props.match.params.project)
-    let previous = this.context.content.projects.find(project => project.fields.url === project.fields.previous)
-    let next = this.context.content.projects.find(project => project.fields.url === project.fields.next)
+    let previous = this.context.content.projects.find(p => p.fields.url === project.fields.previous)
+    let next = this.context.content.projects.find(p => p.fields.url === project.fields.next)
     return <>
       <PageTransition />
       <main className='relative' role='main'>
