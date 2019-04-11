@@ -81,6 +81,11 @@ main {
   &.padded--flat_bottom {
     padding-bottom: 0;
   }
+
+  &.padded--flat_horizontal {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .full_height { height: 100vh !important; }

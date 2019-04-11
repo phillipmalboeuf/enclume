@@ -67,11 +67,16 @@ h1 {
 
   &.h1--massive {
     font-size: $massive_size;
-    line-height: $rythm*4;
+    line-height: $rythm*3;
+
+    @media #{$tablet_landscape} {
+      font-size: $giant_size;
+      line-height: $rythm*2;
+    }
 
     @media #{$tablet_portrait} {
-      font-size: $giant_size;
-      line-height: $rythm*3;
+      font-size: $big_size;
+      line-height: $rythm*1.5;
     }
   }
 }
@@ -308,6 +313,7 @@ iframe {
 small,
 .small {
   font-size: $small_size;
+  line-height: $rythm/2;
 }
 
 .slight,

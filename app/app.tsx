@@ -1,5 +1,6 @@
 
 import 'normalize.css'
+import 'flickity/css/flickity.css'
 import '../styles/styles.scss'
 
 import * as React from 'react'

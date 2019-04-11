@@ -19,7 +19,9 @@ interface State {
     categories: { fields: { [key:string]: any } }[],
     projects: { fields: { [key:string]: any } }[],
     team_members: { fields: { [key:string]: any } }[],
-    collaborators: { fields: { [key:string]: any } }[]
+    collaborators: { fields: { [key:string]: any } }[],
+    awards_page: { fields: { [key:string]: any } }[]
+    awards: { fields: { [key:string]: any } }[]
   },
   locale: any
 }
@@ -73,7 +75,7 @@ export class App extends React.Component<Props, State> {
     }}>
       <BrowserRouter>
         <>
-          <Loading />
+          {/* <Loading /> */}
           <Header />
           <Routes onRoute={()=> {
             window.scrollTo(0, 0)

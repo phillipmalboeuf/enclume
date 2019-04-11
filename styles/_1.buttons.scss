@@ -29,7 +29,7 @@ button {
   &:focus {
     color: $white;
     background: $black--light;
-    text-decoration: none;
+    // text-decoration: none;
   }
 
   &:active {
@@ -100,7 +100,6 @@ button {
   &.button--full {
     // padding-right: 0;
     // padding-left: 0;
-    padding-top: $rythm/1.5;
     width: 100%;
     text-align: left;
   }
