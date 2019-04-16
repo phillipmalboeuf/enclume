@@ -75,7 +75,7 @@ export class App extends React.Component<Props, State> {
     }}>
       <BrowserRouter>
         <>
-          {/* <Loading /> */}
+          <Loading />
           <Header />
           <Routes onRoute={()=> {
             window.scrollTo(0, 0)
