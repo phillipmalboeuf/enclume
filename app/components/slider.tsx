@@ -66,6 +66,10 @@ export class Slider extends React.Component<Props, State> {
     })
   }
 
+  componentDidUpdate() {
+    this.slider.reposition()
+  }
+
   componentWillUnmount() {
     this.slider.destroy()
   }
