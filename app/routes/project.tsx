@@ -41,7 +41,7 @@ export class ProjectsProject extends Index {
             <LPE c={project} k={'hero'} />
           </OnScroll>
 
-          <h1 ref={element => this.parallax.push({ e: element, l: 1 })}><OnScroll><LE c={project} k={'title'} /></OnScroll></h1>
+          <h1 ref={element => this.parallax.push({ e: element, l: 1.5 })}><OnScroll><LE c={project} k={'title'} /></OnScroll></h1>
 
           <div ref={element => this.parallax.push({ e: element, l: 1.5 })} className='medium_bottom max_width'>
             <OnScroll><LRE c={project} k={'description'} /></OnScroll>
@@ -61,7 +61,7 @@ export class ProjectsProject extends Index {
           <span className='big' style={{ transform: 'rotate(90deg)' }}>↓</span>
           <h3 className='flat_bottom'><LE c={previous} k={'title'} /></h3>
         </Link>
-        <Link to={next.fields.url} className='col col--6of12 col--tablet_portrait--12of12 grid grid--spaced grid--middle green_back padded'>
+        <Link to={next.fields.url} className='col col--6of12 col--tablet_portrait--12of12 grid grid--spaced grid--middle teal_back padded'>
           <h3 className='flat_bottom'><LE c={next} k={'title'} /></h3>
           <span className='big' style={{ transform: 'rotate(-90deg)' }}>↓</span>
         </Link>

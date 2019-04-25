@@ -85,6 +85,11 @@ export class Header extends React.Component<Props, State> {
             </NavLink>
           </div>
           <div className='col menu__item'>
+            <NavLink className='header__link' to='/awards' onClick={e => this.summary.click()}>
+              {this.context.locale === 'fr-CA' ? 'Prix Enclume' : 'Enclume awards'}
+            </NavLink>
+          </div>
+          <div className='col menu__item'>
             <NavLink className='header__link' to='/contact' onClick={e => this.summary.click()}>
               {this.context.locale === 'fr-CA' ? 'Contact' : 'Contact'}
             </NavLink>

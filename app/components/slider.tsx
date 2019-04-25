@@ -22,7 +22,7 @@ interface State {
   loaded: boolean
 }
 
-export class Slider extends React.Component<Props, State> {
+export class Slider extends React.PureComponent<Props, State> {
 
   private element: HTMLDivElement
   public slider: Flickity

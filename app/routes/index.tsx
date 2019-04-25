@@ -68,9 +68,9 @@ export class Index extends React.Component<Props, State> {
               <Link to={`/projects/${project.fields.url}`}>
                 <OnScroll>
                   <div className='small_bottom'><LPE c={project} k='hero' /></div>
-                  <h3>
+                  <h4>
                     <LE c={project} k='title' />
-                  </h3>
+                  </h4>
                 </OnScroll>
               </Link>
 

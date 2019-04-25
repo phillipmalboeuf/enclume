@@ -78,6 +78,11 @@ h1 {
       font-size: $big_size;
       line-height: $rythm*1.5;
     }
+
+    @media #{$phone} {
+      font-size: $medium_size;
+      line-height: $rythm/1.2;
+    }
   }
 }
 

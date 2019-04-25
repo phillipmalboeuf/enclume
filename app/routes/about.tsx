@@ -57,13 +57,16 @@ export class About extends Index {
 
             <div className='col col--12of12'></div>
             {this.context.content.team_members.map(member => <div key={member.fields.name} className='col col--4of12 col--tablet_portrait--6of12'>
-              <a className='a--no_hover' href={`${member.fields.url}`}>
+              <a className='a--no_hover'>
                 <div className='relative'>
                   <LPE c={member} k='photo' />
                   <div className='img_hover padded teal_back'>
                     <h2><LE c={member} k='name' /></h2>
                     <h2><LE c={member} k='description' /></h2>
                   </div>
+                </div>
+                <div className='tablet_portrait_only'>
+                  <h3><LE c={member} k='name' /></h3>
                 </div>
               </a>
             </div>)}
