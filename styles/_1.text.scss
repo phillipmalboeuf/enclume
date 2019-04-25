@@ -42,7 +42,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-size: $base_size;
-  font-weight: bold;
+  font-weight: normal;
   line-height: $rythm;
   white-space: pre-line;
 
@@ -89,6 +89,11 @@ h2 {
   @media #{$tablet_portrait} {
     font-size: $medium_size;
     line-height: $rythm/1.2;
+  }
+
+  @media #{$phone} {
+    font-size: $slight_size;
+    line-height: $rythm/1.5;
   }
 
   &.h2--giant {
