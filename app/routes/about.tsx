@@ -57,18 +57,23 @@ export class About extends Index {
 
             <div className='col col--12of12'></div>
             {this.context.content.team_members.map(member => <div key={member.fields.name} className='col col--4of12 col--tablet_portrait--6of12'>
-              <a className='a--no_hover'>
+              <button className='button--transparent'>
                 <div className='relative'>
                   <LPE c={member} k='photo' />
                   <div className='img_hover padded teal_back'>
                     <h2><LE c={member} k='name' /></h2>
                     <h2><LE c={member} k='description' /></h2>
+
+                    <div className='img_hover_hover padded orange_back'>
+                      {member.fields.phone && <h2><a href={`tel:${member.fields.phone}`} target='_blank'><LE c={member} k='phone' /></a></h2>}
+                      {member.fields.emailAddress && <h2><a href={`mailto:${member.fields.emailAddress}`} target='_blank'><LE c={member} k='emailAddress' /></a></h2>}
+                    </div>
                   </div>
                 </div>
                 <div className='tablet_portrait_only'>
                   <h3><LE c={member} k='name' /></h3>
                 </div>
-              </a>
+              </button>
             </div>)}
           </OnScroll>
 
@@ -81,18 +86,20 @@ export class About extends Index {
             <div ref={element => this.parallax.push({ e: element, l: -3 })} className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12'><p className='big'><E c='about' k='collaboratorsBody' /></p></div>
 
             <div className='col col--12of12'></div>
-            {this.context.content.collaborators.map(collaborator => <div key={collaborator.fields.name} className='col col--9of12 col--tablet_landscape--11of12 col--tablet_portrait--12of12' ref={element => this.parallax.push({ e: element, l: -0.5 })}>
+            {this.context.content.collaborators.map(collaborator => <div key={collaborator.fields.name} className='col col--12of12' ref={element => this.parallax.push({ e: element, l: -0.5 })}>
               <hr />
-              <a href={`${collaborator.fields.url}`} target='_blank'>
-                <div className='grid grid--guttered grid--middle'>
-                  <div className='col col--5of12 col--tablet_landscape--6of12 col--tablet_portrait--9of12 col--phone--12of12'>
-                    <h2><LE c={collaborator} k='name' /></h2>
-                  </div>
-                  <div className='col col--7of12 col--tablet_landscape--6of12 col--tablet_portrait--9of12 col--phone--12of12'>
-                    <LE c={collaborator} k='description' />
-                  </div>
+              
+              <div className='grid grid--guttered grid--middle'>
+                <div className='col col--4of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
+                  <a href={`${collaborator.fields.url}`} target='_blank'><h2><LE c={collaborator} k='name' /></h2></a>
                 </div>
-              </a>
+                <div className='col col--5of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
+                  <a href={`${collaborator.fields.url}`} target='_blank'><LE c={collaborator} k='description' /></a>
+                </div>
+                {collaborator.fields.emailAddress && <div className='col col--3of12 col--tablet_landscape--3of12 col--tablet_portrait--9of12 col--phone--12of12'>
+                  <a href={`mailto:${collaborator.fields.emailAddress}`} target='_blank'><LE c={collaborator} k='emailAddress' /></a>
+                </div>}
+              </div>
             </div>)}
           </OnScroll>
 
