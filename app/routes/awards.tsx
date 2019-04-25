@@ -38,9 +38,9 @@ export class Awards extends Index {
             </h1>,
             body: <OnScroll className='grid grid--guttered slight'>
               <div className='col col--2of12 col--tablet_landscape--3of12 hide_on_phone'>
-                <LPE c={award} k='photo' />
+                {/* <LPE c={award} k='photo' /> */}
               </div>
-              <div className='col col--10of12 col--tablet_landscape--9of12 col--phone--12of12 max_width'>
+              <div className='col col--8of12 col--tablet_landscape--6of12 col--phone--12of12 max_width'>
                 <LRE c={award} k='description' />
                 <div className='medium_bottom' />
                 <Slider slides={award.fields.slider.map((slide: any, index: number)=>
@@ -56,6 +56,9 @@ export class Awards extends Index {
                     </div>
                   </div>
                 )} />
+              </div>
+              <div className='col col--2of12 col--tablet_landscape--3of12 hide_on_phone'>
+                <LPE c={award} k='photo' />
               </div>
             </OnScroll>
           })),
