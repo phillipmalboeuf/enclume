@@ -52,13 +52,13 @@ export class Header extends React.Component<Props, State> {
               </NavLink>
             </div>
             <div className='col'>
-              <NavLink className='header__link' to='/contact'>
-                {this.context.locale === 'fr-CA' ? 'Contact' : 'Contact'}
+              <NavLink className='header__link' to='/awards'>
+                {this.context.locale === 'fr-CA' ? 'Prix Enclume' : 'Enclume awards'}
               </NavLink>
             </div>
             <div className='col'>
-              <NavLink className='header__link' to='/awards'>
-                {this.context.locale === 'fr-CA' ? 'Bourses enclume' : 'Enclume awards'}
+              <NavLink className='header__link' to='/contact'>
+                {this.context.locale === 'fr-CA' ? 'Contact' : 'Contact'}
               </NavLink>
             </div>
             <div className='col'>
