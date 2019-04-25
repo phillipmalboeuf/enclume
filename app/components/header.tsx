@@ -61,12 +61,12 @@ export class Header extends React.Component<Props, State> {
                 {this.context.locale === 'fr-CA' ? 'Contact' : 'Contact'}
               </NavLink>
             </div>
-            <div className='col'>
+            {/* <div className='col'>
               <a className='header__link' onClick={()=> {
                 this.context.selectLocale(this.context.locale === 'fr-CA' ? 'en-US' : 'fr-CA')
                 this.context.fetchContent()
               }}>{this.context.locale === 'fr-CA' ? 'En' : 'Fr'}</a>
-            </div>
+            </div> */}
           </div>
         </div>
       </header>
@@ -94,12 +94,12 @@ export class Header extends React.Component<Props, State> {
               {this.context.locale === 'fr-CA' ? 'Contact' : 'Contact'}
             </NavLink>
           </div>
-          <div className='col menu__item'>
+          {/* <div className='col menu__item'>
             <a className='header__link' onClick={()=> {
               this.context.selectLocale(this.context.locale === 'fr-CA' ? 'en-US' : 'fr-CA')
               this.context.fetchContent()
             }}>{this.context.locale === 'fr-CA' ? 'En' : 'Fr'}</a>
-          </div>
+          </div> */}
         </div>
       </details>
     </>
