@@ -22,18 +22,9 @@ export class ProjectsProject extends Index {
       <PageTransition />
       <main className='relative' role='main'>
         {({
-          planning: <>
-          <Icon i='anvil_project_green_top' />
-          <Icon i='anvil_project_green_bottom' />
-          </>,
-          participation: <>
-          <Icon i='anvil_project_red_top' />
-          <Icon i='anvil_project_red_bottom' />
-          </>,
-          research: <>
-          <Icon i='anvil_project_beige_top' />
-          <Icon i='anvil_project_beige_bottom' />
-          </>
+          planning: <Icon i='anvil_project_green' />,
+          participation: <Icon i='anvil_project_red' />,
+          research: <Icon i='anvil_project_beige' />
         } as any)[project.fields.category.fields.key]}
 
         <div className='padded padded--big_top'>
