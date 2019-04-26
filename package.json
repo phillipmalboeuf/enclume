@@ -8,7 +8,7 @@
     "start": "NODE_ENV=production node dist/server.js",
     "app": "parcel index.html -p 8080 --open",
     "server": "parcel watch server/server.tsx --target=node --out-file=server.js | nodemon dist/server.js",
-    "build": "parcel build app/app.tsx --out-file=app.js --no-cache public--public-url ./ && parcel build server/server.tsx --target=node --out-file=server.js --no-cache",
+    "build": "parcel build app/app.tsx --out-file=app.js --no-cache --public-url ./ && parcel build server/server.tsx --target=node --out-file=server.js --no-cache",
     "build:app": "parcel build app/app.tsx --out-file=app.js"
   },
   "author": "Phillip Malboeuf <phillip.malboeuf@gmail>",
