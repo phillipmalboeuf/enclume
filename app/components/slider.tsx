@@ -60,6 +60,8 @@ export class Slider extends React.PureComponent<Props, State> {
         }
       }
     })
+    this.slider.reloadCells()
+    this.slider.reposition()
 
     this.setState({
       loaded: true

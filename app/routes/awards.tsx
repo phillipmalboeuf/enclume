@@ -32,7 +32,7 @@ export class Awards extends Index {
           ...this.context.content.awards.sort((a, b)=> parseInt(a.fields.year) > parseInt(b.fields.year) ? -1 : 1).map(award => ({
             title: <h1 className='h1--massive' style={{ display: 'block' }}>
               <OnScroll className='grid grid--middle grid--guttered'>
-                <div className='col col--2of12 col--tablet_landscape--3of12 col--phone--12of12'><LE c={award} k='year' /></div>
+                <div className='col col--2of12 col--tablet_landscape--3of12 col--phone--12of12 no_underline'><LE c={award} k='year' /></div>
                 <div className='col col--10of12 col--tablet_landscape--9of12 col--phone--12of12'><LE c={award} k='name' /></div>
               </OnScroll>
             </h1>,
@@ -50,8 +50,11 @@ export class Awards extends Index {
                   <div key={slide.sys.id}>
                     <div className='normal_bottom'><Picture src={slide.fields.file.url} /></div>
                     <div className='grid grid--guttered grid--middle'>
-                      <div className='col'>
-                        <h3>{index + 1} / {award.fields.slider.length}</h3>
+                      <div className='col col--12of12'>
+                        <div className='grid grid--middle grid--spaced'>
+                        <h3 className='flat_bottom'>{index + 1} / {award.fields.slider.length}</h3>
+                        <div className='medium'>→</div>
+                        </div>
                       </div>
                       <div className='col max_width max_width--tight'>
                         <div className='small'>{slide.fields.description}</div>
