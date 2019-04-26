@@ -28,8 +28,8 @@ export class ProjectsProject extends Index {
         } as any)[project.fields.category.fields.key]}
 
         <div className='padded padded--big_top'>
-          <OnScroll className='padded medium_bottom max_width max_width--wide max_width--center'>
-            <LPE c={project} k={'hero'} />
+          <OnScroll className='padded big_bottom max_width max_width--center max_width--wide'>
+            <div className='fixed_ratio_img'><LPE c={project} k={'hero'} /></div>
           </OnScroll>
 
           <h1 ref={element => this.parallax.push({ e: element, l: 1.5 })}><OnScroll><LE c={project} k={'title'} /></OnScroll></h1>
