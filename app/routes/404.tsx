@@ -23,11 +23,14 @@ export class FourOFour extends React.Component<Props, State> {
 
   public render() {
     return <>
-      <div className='main' role='main'>
-        <div className='grid grid--full grid--middle grid--center'>
-          404
+      <main className='main blue_back' role='main'>
+        <div className='grid grid--full grid--middle grid--center text_center'>
+          <div>
+            <h1 className='h1--giant'>404</h1>
+            <Link to='/'>Retour à l'acceuil</Link>
+          </div>
         </div>
-      </div>
+      </main>
     </>
   }
 }
