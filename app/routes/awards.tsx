@@ -37,12 +37,15 @@ export class Awards extends Index {
               </OnScroll>
             </h1>,
             body: <OnScroll className='grid grid--guttered slight'>
-              <div className='col col--2of12 col--tablet_landscape--3of12 hide_on_phone'>
-                {/* <LPE c={award} k='photo' /> */}
+              <div className='col col--2of12 col--tablet_landscape--3of12 col--tablet_portrait--6of12 hide_on_tablet_portrait'>
+                <LPE c={award} k='photo' />
               </div>
-              <div className='col col--8of12 col--tablet_landscape--6of12 col--phone--12of12 max_width'>
-                <LRE c={award} k='description' />
-                <div className='medium_bottom' />
+              <div className='col col--7of12 col--tablet_landscape--6of12 col--tablet_portrait--10of12 col--tablet_portrait--last col--phone--12of12'>
+                <div className='max_width'>
+                  <LRE c={award} k='description' />
+                </div>
+              </div>
+              <div className='col col--3of12 col--tablet_landscape--3of12 col--tablet_portrait--8of12 col--phone--12of12'>
                 <Slider slides={award.fields.slider.map((slide: any, index: number)=>
                   <div key={slide.sys.id}>
                     <div className='normal_bottom'><Picture src={slide.fields.file.url} /></div>
@@ -56,9 +59,6 @@ export class Awards extends Index {
                     </div>
                   </div>
                 )} />
-              </div>
-              <div className='col col--2of12 col--tablet_landscape--3of12 hide_on_phone'>
-                <LPE c={award} k='photo' />
               </div>
             </OnScroll>
           })),

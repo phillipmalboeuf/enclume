@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { StaticRouter } from 'react-router-dom'
 
-import { AppContext } from '../app/contexts/app'
+import { AppContext, AppContent } from '../app/contexts/app'
 import { Header } from '../app/components/header'
 import { Loading } from '../app/components/loading'
 import { Footer } from '../app/components/footer'
@@ -10,14 +10,7 @@ import { Footer } from '../app/components/footer'
 interface Props {
   url: string,
   hostname: string,
-  content: {
-    homepage: { fields: { [key:string]: any } },
-    contact: { fields: { [key:string]: any } },
-    categories: { fields: { [key:string]: any } }[],
-    projects: { fields: { [key:string]: any } }[],
-    team_members: { fields: { [key:string]: any } }[],
-    collaborators: { fields: { [key:string]: any } }[]
-  },
+  content: AppContent,
   phone: boolean,
   locale?: any
 }

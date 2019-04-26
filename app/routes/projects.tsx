@@ -38,7 +38,7 @@ export class Projects extends React.Component<Props, State> {
         <div className='padded padded--big_top'>
           <nav className='grid grid--guttered'>
             <OnScroll className='col col--tablet_portrait--12of12'><Link className={`header__link${current_category ? '' : ' active'}`} to='/projects'>Tous</Link></OnScroll>
-            {this.context.content.categories.map(category => <OnScroll className='col' key={category.fields.title}>
+            {this.context.content.about.fields.categories.map((category: any)=> <OnScroll className='col' key={category.fields.title}>
               <Link className={`header__link${current_category === category.fields.key ? ' active' : ''}`} to={`/projects?category=${category.fields.key}`}><LE c={category} k='title' /></Link>
             </OnScroll>)}
           </nav>

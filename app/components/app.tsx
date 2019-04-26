@@ -3,7 +3,7 @@ import * as cookies from 'browser-cookies'
 import axios, { AxiosRequestConfig } from 'axios'
 import { BrowserRouter } from 'react-router-dom'
 
-import { AppContext } from '../contexts/app'
+import { AppContext, AppContent } from '../contexts/app'
 import { Routes } from '../routes'
 
 import { Header } from './header'
@@ -13,16 +13,7 @@ import { Loading } from './loading'
 
 interface Props {}
 interface State {
-  content: {
-    homepage: { fields: { [key:string]: any } },
-    contact: { fields: { [key:string]: any } },
-    categories: { fields: { [key:string]: any } }[],
-    projects: { fields: { [key:string]: any } }[],
-    team_members: { fields: { [key:string]: any } }[],
-    collaborators: { fields: { [key:string]: any } }[],
-    awards_page: { fields: { [key:string]: any } }[]
-    awards: { fields: { [key:string]: any } }[]
-  },
+  content: AppContent,
   locale: any
 }
 
@@ -75,7 +66,7 @@ export class App extends React.Component<Props, State> {
     }}>
       <BrowserRouter>
         <>
-          <Loading />
+          {/* <Loading /> */}
           <Header />
           <Routes onRoute={()=> {
             window.scrollTo(0, 0)
