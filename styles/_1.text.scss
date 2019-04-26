@@ -49,6 +49,14 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
   margin: 0 0 $rythm;
 
+  @media #{$tablet_portrait} {
+    margin-bottom: $rythm/1.5;
+  }
+
+  @media #{$phone} {
+    margin-bottom: $rythm/3;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -344,6 +352,11 @@ a.slight {
   @media #{$tablet_portrait} {
     font-size: $medium_size;
     line-height: $rythm/1.2;
+  }
+
+  @media #{$phone} {
+    font-size: $slight_size;
+    line-height: $rythm/1.5;
   }
 }
 

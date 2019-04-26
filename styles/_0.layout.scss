@@ -55,8 +55,12 @@ main {
 .padded {
   padding: $gutter;
 
-  @media #{$phone} {
+  @media #{$tablet_portrait} {
     padding: $gutter $gutter/2;
+  }
+
+  @media #{$phone} {
+    padding: $gutter/2 $gutter/3;
   }
 
   &.padded--thick {
