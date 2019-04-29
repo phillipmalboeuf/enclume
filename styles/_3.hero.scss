@@ -29,6 +29,11 @@
     z-index: 600;
     background: $blue--dark;
     pointer-events: none;
+
+    @media #{$phone} {
+      top: -5vh;
+      height: 105vh;
+    }
   }
 
   &.hero--transition {
