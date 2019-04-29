@@ -64,7 +64,7 @@ export class About extends Index {
                     <h2 className='small_bottom hide_on_tablet_portrait'><LE c={member} k='name' /></h2>
                     <h2 className='small_bottom'><LE c={member} k='description' /></h2>
 
-                    <div className='img_hover_hover padded padded--tight grid grid--bottom orange_back'>
+                    <div className='img_hover_hover padded padded--tight grid grid--bottom'>
                       <div>
                       {member.fields.phone && <h2 className='small_bottom'><a href={`tel:${member.fields.phone}`} target='_blank'><LE c={member} k='phone' /></a></h2>}
                       {member.fields.emailAddress && <h2 className='small_bottom'><a href={`mailto:${member.fields.emailAddress}`} target='_blank'>{member.fields.emailAddress.replace('@','\n@')}</a></h2>}

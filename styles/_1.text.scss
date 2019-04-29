@@ -172,6 +172,10 @@ a {
     text-decoration: underline;
   }
 
+  &.a--no_underline {
+    border-bottom: none !important;
+  }
+
   &:focus,
   &:hover {
     // color: $blue--dark;
