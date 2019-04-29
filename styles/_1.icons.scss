@@ -102,8 +102,8 @@
   &.icon--anvil_homepage {
     position: absolute;
     top: 0;
-    left: -$rythm/4;
-    width: 103vw;
+    left: 0;
+    width: 100vw;
     height: auto;
     z-index: -1;
 
@@ -126,9 +126,9 @@
   &.icon--anvil_project_beige {
     position: absolute;
     top: 0;
-    left: -$rythm/4;
+    left: 0;
     z-index: 0;
-    width: 103vw;
+    width: 100vw;
     max-width: none;
     height: auto;
     color: $green--light;
