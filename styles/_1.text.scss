@@ -188,6 +188,10 @@ a {
 
       & > h3 {
         border-bottom: 3px solid;
+
+        @media #{$phone} {
+          border-bottom-width: 2px;
+        }
       }
     }
   }
