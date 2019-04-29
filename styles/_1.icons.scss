@@ -37,7 +37,8 @@
   &.icon--anvil_blue,
   &.icon--anvil_green,
   &.icon--anvil_hero,
-  &.icon--anvil_homepage {
+  &.icon--anvil_homepage,
+  &.icon--anvil_404 {
     position: absolute;
     top: 0;
     left: 0;
@@ -57,7 +58,8 @@
     }
   }
 
-  &.icon--anvil_blue {
+  &.icon--anvil_blue,
+  &.icon--anvil_404 {
     color: $blue;
     width: 100vw;
     height: auto;

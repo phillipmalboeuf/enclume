@@ -23,7 +23,8 @@ export class FourOFour extends React.Component<Props, State> {
 
   public render() {
     return <>
-      <main className='main blue_back' role='main'>
+      <main className='main blue_back relative' role='main'>
+        <Icon i='anvil_404' />
         <div className='grid grid--full grid--middle grid--center text_center'>
           <div>
             <h1 className='h1--giant'>404</h1>
