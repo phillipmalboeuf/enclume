@@ -56,7 +56,7 @@ export class About extends Index {
             <div className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 3 })}><p className='big'><E c='about' k='teamBody' /></p></div>
 
             <div className='col col--12of12'></div>
-            {this.context.content.about.fields.teamMembers.map((member: { fields: any; })=> <div key={member.fields.name} className='col col--4of12 col--tablet_portrait--6of12'>
+            {this.context.content.about.fields.teamMembers.map((member: { fields: any, sys: { id: string } })=> <div key={member.sys.id} className='col col--4of12 col--tablet_portrait--6of12'>
               <button className='button--transparent'>
                 <div className='relative'>
                   <LPE c={member} k='photo' />

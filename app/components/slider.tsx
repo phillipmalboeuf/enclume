@@ -56,7 +56,7 @@ export class Slider extends React.PureComponent<Props, State> {
         change: (index: number) => {
           this.step = index
           // this.props.withHistory && history.pushState({}, '', `#/${index}`)
-          this.setState({})
+          // this.setState({})
         }
       }
     })
