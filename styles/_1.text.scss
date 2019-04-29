@@ -178,6 +178,7 @@ a {
     // text-decoration: underline;
     border-bottom: 2px solid;
 
+    h2 &,
     &.big {
       border-bottom-width: 3px;
     }

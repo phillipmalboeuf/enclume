@@ -93,10 +93,10 @@ export class About extends Index {
               
               <div className='grid grid--guttered grid--middle'>
                 <div className='col col--4of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
-                  <a href={`${collaborator.fields.url}`} target='_blank'><h2><LE c={collaborator} k='name' /></h2></a>
+                  <h2><a href={`${collaborator.fields.url}`} target='_blank'><LE c={collaborator} k='name' /></a></h2>
                 </div>
                 <div className='col col--5of12 col--tablet_landscape--4of12 col--tablet_portrait--9of12 col--phone--12of12'>
-                  <a href={`${collaborator.fields.url}`} target='_blank'><LE c={collaborator} k='description' /></a>
+                  <LE c={collaborator} k='description' />
                 </div>
                 {collaborator.fields.emailAddress && <div className='col col--3of12 col--tablet_landscape--3of12 col--tablet_portrait--9of12 col--phone--12of12'>
                   <a href={`mailto:${collaborator.fields.emailAddress}`} target='_blank'><LE c={collaborator} k='emailAddress' /></a>
