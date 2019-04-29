@@ -61,12 +61,12 @@ export class About extends Index {
                 <div className='relative'>
                   <LPE c={member} k='photo' />
                   <div className='img_hover padded teal_back'>
-                    <h2><LE c={member} k='name' /></h2>
-                    <h2><LE c={member} k='description' /></h2>
+                    <h2 className='small_bottom'><LE c={member} k='name' /></h2>
+                    <h2 className='small_bottom'><LE c={member} k='description' /></h2>
 
                     <div className='img_hover_hover padded orange_back'>
-                      {member.fields.phone && <h2><a href={`tel:${member.fields.phone}`} target='_blank'><LE c={member} k='phone' /></a></h2>}
-                      {member.fields.emailAddress && <h2><a href={`mailto:${member.fields.emailAddress}`} target='_blank'><LE c={member} k='emailAddress' /></a></h2>}
+                      {member.fields.phone && <h2 className='small_bottom'><a href={`tel:${member.fields.phone}`} target='_blank'><LE c={member} k='phone' /></a></h2>}
+                      {member.fields.emailAddress && <h2 className='small_bottom'><a href={`mailto:${member.fields.emailAddress}`} target='_blank'><LE c={member} k='emailAddress' /></a></h2>}
                     </div>
                   </div>
                 </div>
