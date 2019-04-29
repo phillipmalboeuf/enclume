@@ -60,13 +60,15 @@ export class About extends Index {
               <button className='button--transparent'>
                 <div className='relative'>
                   <LPE c={member} k='photo' />
-                  <div className='img_hover padded teal_back'>
-                    <h2 className='small_bottom'><LE c={member} k='name' /></h2>
+                  <div className='img_hover padded padded--tight teal_back'>
+                    <h2 className='small_bottom hide_on_tablet_portrait'><LE c={member} k='name' /></h2>
                     <h2 className='small_bottom'><LE c={member} k='description' /></h2>
 
-                    <div className='img_hover_hover padded orange_back'>
+                    <div className='img_hover_hover padded padded--tight grid grid--bottom orange_back'>
+                      <div>
                       {member.fields.phone && <h2 className='small_bottom'><a href={`tel:${member.fields.phone}`} target='_blank'><LE c={member} k='phone' /></a></h2>}
-                      {member.fields.emailAddress && <h2 className='small_bottom'><a href={`mailto:${member.fields.emailAddress}`} target='_blank'><LE c={member} k='emailAddress' /></a></h2>}
+                      {member.fields.emailAddress && <h2 className='small_bottom'><a href={`mailto:${member.fields.emailAddress}`} target='_blank'>{member.fields.emailAddress.replace('@','\n@')}</a></h2>}
+                      </div>
                     </div>
                   </div>
                 </div>
