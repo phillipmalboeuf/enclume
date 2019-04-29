@@ -126,9 +126,9 @@
   &.icon--anvil_project_beige {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -3px;
     z-index: 0;
-    width: 100vw;
+    width: 101vw;
     max-width: none;
     height: auto;
     color: $green--light;
