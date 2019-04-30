@@ -27,7 +27,7 @@ export class Contact extends React.Component<Props, State> {
   public render() {
     return <>
       <PageTransition />
-      <main className='teal_back' role='main'>
+      <main className='teal_back relative' role='main'>
         <Icon i='anvil_orange' />
 
         <div className='grid grid--full grid--middle'>
