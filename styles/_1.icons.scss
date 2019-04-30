@@ -52,10 +52,12 @@
 
   &.icon--anvil_orange_long,
   &.icon--anvil_orange {
-    width: 100vw;
-    height: auto;
+      // width: 100vw;
+      // height: auto;
 
     @media #{$tablet_portrait} {
+      width: 100vw;
+      height: auto;
       top: auto;
       bottom: 0;
     }
