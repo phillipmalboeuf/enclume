@@ -28,7 +28,8 @@ export class Contact extends React.Component<Props, State> {
     return <>
       <PageTransition />
       <main className='teal_back relative' role='main'>
-        <Icon i='anvil_orange' />
+        <span className='hide_on_tablet_portrait'><Icon i='anvil_orange' /></span>
+        <span className='tablet_portrait_only'><Icon i='anvil_orange_long' /></span>
 
         <div className='grid grid--full grid--middle'>
           <OnScroll className='padded'>

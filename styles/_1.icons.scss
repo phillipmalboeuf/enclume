@@ -34,6 +34,7 @@
   }
 
   &.icon--anvil_orange,
+  &.icon--anvil_orange_long,
   &.icon--anvil_blue,
   &.icon--anvil_green,
   &.icon--anvil_hero,
@@ -49,6 +50,7 @@
     color: $orange;
   }
 
+  &.icon--anvil_orange_long,
   &.icon--anvil_orange {
     width: 100vw;
     height: auto;
