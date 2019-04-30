@@ -69,6 +69,7 @@ export class Slider extends React.PureComponent<Props, State> {
   }
 
   componentDidUpdate() {
+    window.dispatchEvent(new Event('resize'))
     this.slider.reposition()
   }
 
