@@ -11,7 +11,7 @@ export const Fade: React.SFC<Props> = (props) => {
   return <Spring config={{
     tension: 200,
     friction: 100
-  }} from={{ opacity: 0 }} to={{ opacity: 1 }}>
+  }} from={{ willChange: 'transform, opacity', opacity: 0 }} to={{ opacity: 1 }}>
     {styles => <div style={styles} className={props.className}>{props.children}</div>}
   </Spring>
 }
@@ -21,7 +21,7 @@ export const FadeOut: React.SFC<Props> = (props) => {
     tension: 200,
     friction: 100,
     delay: 2000
-  }} from={{ opacity: 1 }} to={{ opacity: 0 }}>
+  }} from={{ willChange: 'transform, opacity', opacity: 1 }} to={{ opacity: 0 }}>
     {styles => <div style={styles} className={props.className}>{props.children}</div>}
   </Spring>
 }
@@ -53,7 +53,7 @@ export const Height: React.SFC<HeightProps> = (props) => {
   return <Spring config={{
     tension: 200,
     friction: 50
-  }} from={{ height: 0, overflow: 'hidden' }} to={{ height: props.open ? 'auto' : 0 }}>
+  }} from={{ willChange: 'transform, opacity', height: 0, overflow: 'hidden' }} to={{ height: props.open ? 'auto' : 0 }}>
     {styles => <div style={styles}>{props.children}</div>}
   </Spring>
 }
@@ -62,7 +62,7 @@ export const Glide: React.SFC<Props> = (props) => {
   return <Spring config={{
     tension: 200,
     friction: 23
-  }} from={{ transform: 'translateY(100%)' }} to={{ transform: 'translateY(0)' }}>
+  }} from={{ willChange: 'transform, opacity', transform: 'translateY(100%)' }} to={{ transform: 'translateY(0)' }}>
     {styles => <div style={styles} className={props.className}>{props.children}</div>}
   </Spring>
 }
@@ -85,7 +85,7 @@ export const Transition: React.SFC<{ keys: string[] } & Props> = props => {
       tension: 100,
       friction: 42
     }}
-    from={{ transform: 'translateY(100%)' }}
+    from={{ willChange: 'transform, opacity', transform: 'translateY(100%)' }}
     enter={{ transform: 'translateY(-100%)' }}>
     {(loc, state) => style => <animated.div style={style} className={props.className}>
       {props.children}
@@ -146,7 +146,7 @@ export class OnScroll extends React.Component<OnScrollProps, OnScrollState> {
     return <Spring native config={{
       tension: 200,
       friction: 100
-    }} from={{ opacity: 0, transform: 'translateY(10%)' }} to={{ opacity: this.state.visible ? 1 : 0, transform: this.state.visible ? 'translateY(0%)' : 'translateY(10%)' }}>
+    }} from={{ willChange: 'transform, opacity', opacity: 0, transform: 'translateY(10%)' }} to={{ opacity: this.state.visible ? 1 : 0, transform: this.state.visible ? 'translateY(0%)' : 'translateY(10%)' }}>
       {styles => <animated.div ref={element => this.element = element} style={styles} className={this.props.className}>{this.props.children}</animated.div>}
     </Spring>
   }
