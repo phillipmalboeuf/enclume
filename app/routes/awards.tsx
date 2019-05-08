@@ -23,9 +23,9 @@ export class Awards extends Index {
 
         <div className='padded padded--big_top'>
           <OnScroll className='grid medium_bottom'>
-            <h3 className='col col--7of12 col--tablet_portrait--9of12 col--phone--12of12'>
+            <h2 className='col col--7of12 col--tablet_portrait--9of12 col--phone--12of12'>
               <E c='awards_page' k='introduction' />
-            </h3>
+            </h2>
           </OnScroll>
         </div>
 
