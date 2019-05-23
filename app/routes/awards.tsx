@@ -11,6 +11,7 @@ import { Accordion } from '../components/accordion'
 import { Slider } from '../components/slider'
 import { Picture } from '../components/picture'
 import { Helm } from '../components/helm'
+import { Asset } from 'contentful';
 
 
 export class Awards extends Index {
@@ -76,7 +77,8 @@ export class Awards extends Index {
               </OnScroll>
             </h1>,
             body: <OnScroll className='grid grid--guttered slight'>
-              <div className='col col--2of12 col--tablet_landscape--3of12 hide_on_phone'>
+              <div className='col col--2of12 col--tablet_landscape--3of12 col--phone--12of12'>
+                {this.context.content.awards_page.fields.pdf && <a href={(this.context.content.awards_page.fields.pdf as Asset).fields.file.url} target='_blank' className='underline medium'>{(this.context.content.awards_page.fields.pdf as Asset).fields.title}</a>}
               </div>
               <div className='col col--10of12 col--tablet_landscape--9of12 col--phone--12of12 max_width'>
                 <Slider draggable={false} progress={this.context.content.awards_page.fields.informationPage.map((slide: any)=>
