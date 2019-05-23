@@ -7,6 +7,7 @@ import { Icon } from '../components/icon'
 import { E, PE, LPE, LE } from '../components/entry'
 import { OnScroll } from '../components/animations'
 import { PageTransition } from '../components/page_transition'
+import { Helm } from '../components/helm'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -52,6 +53,7 @@ export class Index extends React.Component<Props, State> {
 
   public render() {
     return <>
+      <Helm title={this.context.content.homepage.fields.title} description={this.context.content.homepage.fields.description} />
       <PageTransition />
       <main role='main'>
 

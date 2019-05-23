@@ -10,6 +10,7 @@ import { PageTransition } from '../components/page_transition'
 import { Accordion } from '../components/accordion'
 import { Slider } from '../components/slider'
 import { Picture } from '../components/picture'
+import { Helm } from '../components/helm'
 
 
 export class Awards extends Index {
@@ -18,6 +19,7 @@ export class Awards extends Index {
 
   public render() {
     return <>
+      <Helm title={this.context.content.awards_page.fields.title} description={this.context.content.awards_page.fields.introduction} />
       <PageTransition />
       <main className='' role='main'>
 

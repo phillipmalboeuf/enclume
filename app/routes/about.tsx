@@ -8,6 +8,7 @@ import { LPE, LE, E, RE } from '../components/entry'
 import { Index } from './index'
 import { OnScroll } from '../components/animations'
 import { PageTransition } from '../components/page_transition'
+import { Helm } from '../components/helm'
 
 
 export class About extends Index {
@@ -15,6 +16,7 @@ export class About extends Index {
 
   public render() {
     return <>
+      <Helm title={this.context.content.about.fields.title} description={this.context.content.about.fields.intro} />
       <PageTransition />
       <main className='blue_back' role='main'>
         <Icon i='anvil_blue' />

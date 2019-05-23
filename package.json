@@ -14,7 +14,9 @@
   "author": "Phillip Malboeuf <phillip.malboeuf@gmail>",
   "license": "ISC",
   "dependencies": {
+    "@contentful/rich-text-plain-text-renderer": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.1.0",
+    "@types/react-helmet": "^5.0.8",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "browser-cookies": "^1.2.0",
@@ -35,6 +37,7 @@
     "query-string": "^6.3.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-helmet": "^5.2.1",
     "react-router-dom": "^4.3.1",
     "react-spring": "^7.2.11"
   },

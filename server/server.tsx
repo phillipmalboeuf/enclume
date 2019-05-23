@@ -10,11 +10,13 @@ import useragent from 'express-useragent'
 
 import * as ReactDOM from 'react-dom/server'
 import * as React from 'react'
+import Helmet from 'react-helmet'
 
 import { CONF } from '../config'
 
 import { HTML } from './html'
 import { Routes } from '../app/routes'
+
 
 
 const server: Application = express()
@@ -71,7 +73,7 @@ server.get('/content', (req: Request, res: Response) => {
 
 server.get('/*', (req: Request, res: Response) => {
   entries(req.cookies['locale'] || 'fr-CA').then(([homepages, contacts, abouts, categories, projects, team_members, collaborators, awards_pages, awards])=> {
-    res.send(`<!doctype html>${ReactDOM.renderToString(
+    const html = ReactDOM.renderToString(
       <HTML
         url={req.originalUrl}
         hostname={req.hostname}
@@ -89,7 +91,11 @@ server.get('/*', (req: Request, res: Response) => {
         phone={req.useragent.isMobile}>
         <Routes />
       </HTML>
-    )}`)
+    )
+    const helmet = Helmet.renderStatic()
+    res.send(`<!doctype html>${html
+      .replace('<html>', `<html ${helmet.htmlAttributes.toString()}>`)
+      .replace('</head>', `${helmet.title.toString()}${helmet.meta.toString()}${helmet.link.toString()}</head>`)}`)
   })
 })
 

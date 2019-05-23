@@ -9,6 +9,7 @@ import { Picture } from '../components/picture'
 import { LE, LPE } from '../components/entry'
 import { OnScroll } from '../components/animations'
 import { PageTransition } from '../components/page_transition'
+import { Helm } from '../components/helm'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -27,14 +28,15 @@ export class Projects extends React.Component<Props, State> {
   }
 
   public render() {
-    let current_category = query.parse(this.props.location.search).category
+    let current_category = this.context.content.about.fields.categories.find((category: any)=> category.fields.key === query.parse(this.props.location.search).category)
     return <>
+      <Helm title={current_category ? current_category.fields.title : 'Projets'} description={current_category && current_category.fields.description} />
       <PageTransition />
       <main className={`${current_category ? ({
         planning: 'light_green_back',
         participation: 'red_back',
         research: 'beige_back'
-      } as any)[current_category as string] : ''}`} role='main'>
+      } as any)[current_category.fields.key as string] : ''}`} role='main'>
         <div className='padded padded--big_top'>
           <nav className='grid grid--guttered'>
             <OnScroll className='col col--tablet_portrait--12of12'><Link className={`header__link${current_category ? '' : ' active'}`} to='/projects'>Tous</Link></OnScroll>
@@ -46,7 +48,7 @@ export class Projects extends React.Component<Props, State> {
           <div className='normal_bottom' />
 
           <div className='grid grid--guttered'>
-            {this.context.content.projects.filter(project => !current_category || project.fields.category.fields.key === current_category).sort((a, b)=> {
+            {this.context.content.projects.filter(project => !current_category || (project.fields.category && project.fields.category.fields.key === current_category)).sort((a, b)=> {
               return (a.fields.releaseDate ? new Date(a.fields.releaseDate) : new Date('1970-01-01')) > (b.fields.releaseDate ? new Date(b.fields.releaseDate) : new Date('1970-01-01')) ? -1 : 1
             }).map(project => <div key={project.fields.url} className='col col--4of12 col--tablet_landscape--6of12 col--tablet_portrait--12of12'>
               <Link to={`/projects/${project.fields.url}`}>

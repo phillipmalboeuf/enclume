@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
+import { Helm } from '../components/helm'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -23,6 +24,7 @@ export class FourOFour extends React.Component<Props, State> {
 
   public render() {
     return <>
+      <Helm title={'404'} />
       <main className='main blue_back relative' role='main'>
         <Icon i='anvil_404' />
         <div className='grid grid--full grid--middle grid--center text_center'>

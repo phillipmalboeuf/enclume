@@ -7,6 +7,7 @@ import { Icon } from '../components/icon'
 import { E, RE } from '../components/entry'
 import { Fade, OnScroll } from '../components/animations'
 import { PageTransition } from '../components/page_transition'
+import { Helm } from '../components/helm'
 
 
 interface Props extends RouteComponentProps<any> {}
@@ -26,6 +27,7 @@ export class Contact extends React.Component<Props, State> {
 
   public render() {
     return <>
+      <Helm title={this.context.content.contact.fields.title} description={this.context.content.contact.fields.description} />
       <PageTransition />
       <main className='teal_back relative' role='main'>
         <span className='hide_on_tablet_portrait'><Icon i='anvil_orange' /></span>
