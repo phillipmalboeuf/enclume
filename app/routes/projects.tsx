@@ -29,6 +29,7 @@ export class Projects extends React.Component<Props, State> {
 
   public render() {
     let current_category = this.context.content.about.fields.categories.find((category: any)=> category.fields.key === query.parse(this.props.location.search).category)
+    console.log(this.context.content.projects.filter(project => project.fields.url === 'domaine-saint-bernard'))
     return <>
       <Helm title={current_category ? current_category.fields.title : 'Projets'} description={current_category && current_category.fields.description} />
       <PageTransition />
@@ -48,7 +49,10 @@ export class Projects extends React.Component<Props, State> {
           <div className='normal_bottom' />
 
           <div className='grid grid--guttered'>
-            {this.context.content.projects.filter(project => !current_category || (project.fields.category && project.fields.category.fields.key === current_category.fields.key)).sort((a, b)=> {
+            {this.context.content.projects.filter(project => !current_category
+              || (project.fields.categories && project.fields.categories.length > 0 && project.fields.categories.map((category: any)=> category.fields.key).includes(current_category.fields.key))
+              || (project.fields.category && project.fields.category.fields.key === current_category.fields.key)
+            ).sort((a, b)=> {
               return (a.fields.releaseDate ? new Date(a.fields.releaseDate) : new Date('1970-01-01')) > (b.fields.releaseDate ? new Date(b.fields.releaseDate) : new Date('1970-01-01')) ? -1 : 1
             }).map(project => <div key={project.fields.url} className='col col--4of12 col--tablet_landscape--6of12 col--tablet_portrait--12of12'>
               <Link to={`/projects/${project.fields.url}`}>
