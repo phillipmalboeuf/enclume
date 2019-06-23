@@ -58,13 +58,17 @@ export class About extends Index {
             <div className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 3 })}><p className='big'><E c='about' k='teamBody' /></p></div>
 
             <div className='col col--12of12'></div>
-            {this.context.content.about.fields.teamMembers.map((member: { fields: any, sys: { id: string } })=> <div key={member.sys.id} className='col col--4of12 col--tablet_portrait--6of12'>
+            {this.context.content.about.fields.teamMembers.filter((member: any)=> member.fields).map((member: { fields: any, sys: { id: string } })=> <div key={member.sys.id} className='col col--4of12 col--tablet_portrait--6of12'>
               <button className='button--transparent'>
                 <div className='relative'>
                   <LPE c={member} k='photo' />
                   <div className='img_hover padded padded--tight teal_back'>
                     <h2 className='small_bottom hide_on_tablet_portrait'><LE c={member} k='name' /></h2>
-                    <h2 className='small_bottom'><LE c={member} k='description' /></h2>
+                    <h2><LE c={member} k='description' /></h2>
+                    {member.fields.credentials && <div className='grid grid--guttered'>{Object.entries(member.fields.credentials).map(([key, value])=> <div key={key} className='col' style={{ lineHeight: 1.33 }}>
+                      <strong>{key}</strong><br />
+                      {value}
+                    </div>)}</div>}
 
                     <div className='img_hover_hover padded padded--tight grid grid--bottom'>
                       <div>
