@@ -42,7 +42,7 @@ export class Awards extends Index {
             </h1>,
             body: <OnScroll className='grid grid--guttered slight'>
               <div className='col col--2of12 col--tablet_landscape--3of12 col--tablet_portrait--6of12 hide_on_tablet_portrait'>
-                <LPE c={award} k='photo' />
+                {award.fields.photo && <LPE c={award} k='photo' />}
               </div>
               <div className='col col--7of12 col--tablet_landscape--6of12 col--tablet_portrait--10of12 col--tablet_portrait--last col--phone--12of12'>
                 <div className='max_width'>
