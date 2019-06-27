@@ -65,7 +65,7 @@ export class About extends Index {
                   <div className='img_hover padded padded--tight teal_back'>
                     <h2 className='small_bottom hide_on_tablet_portrait'><LE c={member} k='name' /></h2>
                     <h2><LE c={member} k='description' /></h2>
-                    {member.fields.credentials && <div className='grid grid--guttered'>{Object.entries(member.fields.credentials).map(([key, value])=> <div key={key} className='col' style={{ lineHeight: 1.33 }}>
+                    {member.fields.credentials && <div className='grid grid--tight_guttered'>{Object.entries(member.fields.credentials).map(([key, value])=> <div key={key} className='col col--6of12 col--phone--12of12 small_on_phone' style={{ lineHeight: 1.33 }}>
                       <strong>{key}</strong><br />
                       {value}
                     </div>)}</div>}

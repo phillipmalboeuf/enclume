@@ -99,7 +99,7 @@ h2 {
   line-height: $rythm*1.333;
   font-weight: normal;
 
-  @media #{$tablet_portrait} {
+  @media #{$tablet_landscape} {
     font-size: $medium_size;
     line-height: $rythm/1.2;
   }
@@ -341,6 +341,13 @@ small,
 .small {
   font-size: $small_size;
   line-height: $rythm/2;
+}
+
+.small_on_phone {
+  @media #{$phone} {
+    font-size: $small_size;
+    line-height: $rythm/2;
+  }
 }
 
 .slight,
