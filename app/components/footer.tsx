@@ -49,7 +49,7 @@ export class Footer extends React.Component<Props, State> {
             </div>
             <div className='col'>
               <a href='https://www.facebook.com/enclume.ca/' target='_blank'>Facebook</a><br />
-              <a href='https://instagram.com' target='_blank'>Instagram</a><br />
+              <a href='https://instagram.com/Enclume_atelier' target='_blank'>Instagram</a><br />
               <a href="https://www.linkedin.com/company/l'enclume---atelier-de-d-veloppement-territorial/" target='_blank'>LinkedIn</a>
             </div>
           </div>
