@@ -60,7 +60,7 @@ export class App extends React.Component<Props, State> {
     ? <AppContext.Provider value={{
       content: this.state.content,
       locale: this.state.locale,
-      phone: window.innerWidth <= 600,
+      phone: window.innerWidth <= 900,
       fetchContent: this.fetchContent.bind(this),
       selectLocale: this.selectLocale.bind(this)
     }}>
