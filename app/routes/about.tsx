@@ -63,8 +63,8 @@ export class About extends Index {
                 <div className='relative'>
                   <LPE c={member} k='photo' />
                   <div className='img_hover padded padded--tight teal_back'>
-                    <h2 className='small_bottom hide_on_tablet_portrait'><LE c={member} k='name' /></h2>
-                    <h2><LE c={member} k='description' /></h2>
+                    <h3 className='small_bottom hide_on_tablet_portrait'><LE c={member} k='name' /></h3>
+                    <h3><LE c={member} k='description' /></h3>
                     {member.fields.credentials && <div className='grid grid--tight_guttered hide_on_tablet_portrait'>{Object.entries(member.fields.credentials).map(([key, value])=> <div key={key} className='col col--6of12 col--phone--12of12' style={{ lineHeight: 1.33 }}>
                       <strong>{key}</strong><br />
                       {value}
@@ -72,8 +72,8 @@ export class About extends Index {
 
                     <div className='img_hover_hover padded padded--tight grid grid--bottom'>
                       <div>
-                      {member.fields.phone && <h2 className='small_bottom'><a href={`tel:${member.fields.phone}`} target='_blank'><LE c={member} k='phone' /></a></h2>}
-                      {member.fields.emailAddress && <h2 className='small_bottom'><a href={`mailto:${member.fields.emailAddress}`} target='_blank'>{member.fields.emailAddress.replace('@','\n@')}</a></h2>}
+                      {member.fields.phone && <h3 className='small_bottom'><a href={`tel:${member.fields.phone}`} target='_blank'><LE c={member} k='phone' /></a></h3>}
+                      {member.fields.emailAddress && <h3 className='small_bottom'><a href={`mailto:${member.fields.emailAddress}`} target='_blank'>{member.fields.emailAddress.replace('@','\n@')}</a></h3>}
                       </div>
                     </div>
                   </div>
