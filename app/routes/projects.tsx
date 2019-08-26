@@ -39,9 +39,9 @@ export class Projects extends React.Component<Props, State> {
       } as any)[current_category.fields.key as string] : ''}`} role='main'>
         <div className='padded padded--big_top'>
           <nav className='grid grid--guttered'>
-            <OnScroll className='col col--tablet_portrait--12of12'><Link className={`header__link${current_category ? '' : ' active'}`} to='/projects'>Tous</Link></OnScroll>
+            <OnScroll className='col col--tablet_portrait--12of12'><Link className={`header__link${current_category ? '' : ' active'}`} to='/projets'>Tous</Link></OnScroll>
             {this.context.content.about.fields.categories.map((category: any)=> <OnScroll className='col' key={category.fields.title}>
-              <Link className={`header__link${current_category === category.fields.key ? ' active' : ''}`} to={`/projects?category=${category.fields.key}`}><LE c={category} k='title' /></Link>
+              <Link className={`header__link${current_category === category.fields.key ? ' active' : ''}`} to={`/projets?category=${category.fields.key}`}><LE c={category} k='title' /></Link>
             </OnScroll>)}
           </nav>
 
@@ -54,7 +54,7 @@ export class Projects extends React.Component<Props, State> {
             ).sort((a, b)=> {
               return (a.fields.releaseDate ? new Date(a.fields.releaseDate) : new Date('1970-01-01')) > (b.fields.releaseDate ? new Date(b.fields.releaseDate) : new Date('1970-01-01')) ? -1 : 1
             }).map(project => <div key={project.fields.url} className='col col--4of12 col--tablet_landscape--6of12 col--tablet_portrait--12of12'>
-              <Link to={`/projects/${project.fields.url}`}>
+              <Link to={`/projets/${project.fields.url}`}>
                 <OnScroll>
                   <div className='small_bottom'><LPE c={project} k='hero' /></div>
                   <p className='slight'>

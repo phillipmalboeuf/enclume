@@ -19,11 +19,11 @@ export const Routes: React.SFC<Props> = (props) => {
   if (props.onRoute) { props.onRoute() }
   return <>
     <Switch>
-      <Route exact path='/projects' component={Projects} />
-      <Route exact path='/projects/:project' component={ProjectsProject} />
-      <Route exact path='/about' component={About} />
+      <Route exact path='/projets' component={Projects} />
+      <Route exact path='/projets/:project' component={ProjectsProject} />
+      <Route exact path='/a-propos' component={About} />
       <Route exact path='/contact' component={Contact} />
-      <Route exact path='/awards' component={Awards} />
+      <Route exact path='/prix' component={Awards} />
       <Route exact path='/' component={Index} />
       <Route component={FourOFour} />
     </Switch>

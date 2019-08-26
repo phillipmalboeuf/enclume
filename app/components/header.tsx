@@ -42,17 +42,17 @@ export class Header extends React.Component<Props, State> {
 
           <div className='grid grid--thick_guttered hide_on_tablet_portrait'>
             <div className='col'>
-              <NavLink className='header__link' to='/projects'>
+              <NavLink className='header__link' to='/projets'>
                 {this.context.locale === 'fr-CA' ? 'Projets' : 'Projects'}
               </NavLink>
             </div>
             <div className='col'>
-              <NavLink className='header__link' to='/about'>
+              <NavLink className='header__link' to='/a-propos'>
                 {this.context.locale === 'fr-CA' ? 'À propos' : 'About us'}
               </NavLink>
             </div>
             <div className='col'>
-              <NavLink className='header__link' to='/awards'>
+              <NavLink className='header__link' to='/prix'>
                 {this.context.locale === 'fr-CA' ? 'Prix Enclume' : 'Enclume awards'}
               </NavLink>
             </div>
@@ -75,17 +75,17 @@ export class Header extends React.Component<Props, State> {
 
         <div className='menu__container grid grid--vertically_spaced'>
           <div className='col menu__item'>
-            <NavLink className='header__link' to='/projects' onClick={e => this.summary.click()}>
+            <NavLink className='header__link' to='/projets' onClick={e => this.summary.click()}>
               {this.context.locale === 'fr-CA' ? 'Projets' : 'Projects'}
             </NavLink>
           </div>
           <div className='col menu__item'>
-            <NavLink className='header__link' to='/about' onClick={e => this.summary.click()}>
+            <NavLink className='header__link' to='/a-propos' onClick={e => this.summary.click()}>
               {this.context.locale === 'fr-CA' ? 'À propos' : 'About us'}
             </NavLink>
           </div>
           <div className='col menu__item'>
-            <NavLink className='header__link' to='/awards' onClick={e => this.summary.click()}>
+            <NavLink className='header__link' to='/prix' onClick={e => this.summary.click()}>
               {this.context.locale === 'fr-CA' ? 'Prix Enclume' : 'Enclume awards'}
             </NavLink>
           </div>
