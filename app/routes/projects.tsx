@@ -58,7 +58,8 @@ export class Projects extends React.Component<Props, State> {
                 <OnScroll>
                   <div className='small_bottom'><LPE c={project} k='hero' /></div>
                   <p className='slight'>
-                    <LE c={project} k='title' />
+                    <LE c={project} k='title' /><br />
+                    {project.fields.subTitle && <span className='a__hide'><LE c={project} k='subTitle' /></span>}
                   </p>
                 </OnScroll>
               </Link>

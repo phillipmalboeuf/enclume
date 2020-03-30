@@ -176,6 +176,13 @@ a {
     border-bottom: none !important;
   }
 
+  .a__hide {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.66em);
+    transition: opacity $fast, transform $fast;
+  }
+
   &:focus,
   &:hover {
     // color: $blue--dark;
@@ -197,6 +204,11 @@ a {
           border-bottom-width: 2px;
         }
       }
+    }
+
+    .a__hide {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 

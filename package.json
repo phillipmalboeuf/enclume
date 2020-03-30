@@ -17,7 +17,7 @@
     "@contentful/rich-text-plain-text-renderer": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.1.0",
     "@types/react-helmet": "^5.0.8",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "body-parser": "^1.18.3",
     "browser-cookies": "^1.2.0",
     "compression": "^1.7.3",
@@ -59,11 +59,11 @@
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "@types/react-router-dom": "^4.3.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.18.10",
     "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.12.1",
-    "sass": "^1.17.2",
-    "typescript": "^3.3.3333"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.3",
+    "typescript": "^3.8.3"
   }
 }
