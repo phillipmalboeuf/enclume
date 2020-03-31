@@ -181,6 +181,7 @@ a {
     opacity: 0;
     transform: translateY(0.66em);
     transition: opacity $fast, transform $fast;
+    font-size: $base_size;
   }
 
   &:focus,
