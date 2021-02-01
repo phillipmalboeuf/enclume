@@ -30,7 +30,7 @@ export const HTML: React.SFC<Props> = (props) => {
       <meta httpEquiv='Accept-CH' content='Width, DPR' />
       <link rel='stylesheet' type='text/css' href='/dist/app.css' />
 
-      {/* <link rel='icon' type='image/png' href='https://montrealuploads.imgix.net/bombom/favicon_logo.png?auto=compress' /> */}
+      <link rel='icon' type='image/svg' href='https://images.ctfassets.net/esgvtsxg5drv/48cQ9HTqCIWni53SZ3k5XO/93cf6a14580867f6f3ab852088c1ad4f/favicon.svg' />
     </head>
     <body>
 
