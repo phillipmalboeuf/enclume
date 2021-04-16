@@ -16,10 +16,12 @@ interface Props {
 }
 
 export const HTML: React.SFC<Props> = (props) => {
+  const dev = !props.hostname.includes('enclume.ca')
   return <AppContext.Provider value={{
     content: props.content,
     locale: props.locale,
     phone: props.phone,
+    dev,
     fetchContent: undefined,
     selectLocale: undefined
   }}>
@@ -47,6 +49,7 @@ export const HTML: React.SFC<Props> = (props) => {
      
 
       <script dangerouslySetInnerHTML={{ __html: `window.content = ${JSON.stringify(props.content)}` }} />
+      {dev && <script dangerouslySetInnerHTML={{ __html: `window.dev = true` }} />}
       <script src='/dist/app.js' />
     </body>
     </html>

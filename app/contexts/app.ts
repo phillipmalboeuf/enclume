@@ -16,6 +16,7 @@ export const AppContext = React.createContext({
   content: {} as AppContent,
   locale: undefined as any,
   phone: false as boolean,
+  dev: false as boolean,
   fetchContent: ()=> function(): void {},
   selectLocale: (locale: string)=> function(): void {}
 })

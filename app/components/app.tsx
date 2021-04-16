@@ -61,6 +61,7 @@ export class App extends React.Component<Props, State> {
       content: this.state.content,
       locale: this.state.locale,
       phone: window.innerWidth <= 900,
+      dev: window.dev,
       fetchContent: this.fetchContent.bind(this),
       selectLocale: this.selectLocale.bind(this)
     }}>

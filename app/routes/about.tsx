@@ -4,7 +4,7 @@ import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { AppContext } from '../contexts/app'
 import { Icon } from '../components/icon'
-import { LPE, LE, E, RE } from '../components/entry'
+import { LPE, LE, E, RE, LRE } from '../components/entry'
 import { Index } from './index'
 import { OnScroll } from '../components/animations'
 import { PageTransition } from '../components/page_transition'
@@ -43,7 +43,7 @@ export class About extends Index {
             <div className='col col--12of12' ref={element => this.parallax.push({ e: element, l: 1.5 })}>
               <E c='about' k='categoriesTitle' />
             </div>
-            {this.context.content.about.fields.categories.map((category: any, index: number)=> <div className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--6of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 1.5 })}>
+            {this.context.content.about.fields.categories.map((category: any, index: number)=> <div key={category.sys.id} className='col col--3of12 col--tablet_landscape--4of12 col--tablet_portrait--6of12 col--phone--12of12' ref={element => this.parallax.push({ e: element, l: 1.5 })}>
               <h3><LE c={category} k='title' /></h3>
               <p><LE c={category} k='description' /></p>
             </div>)}
@@ -110,6 +110,22 @@ export class About extends Index {
               </div>
             </div>)}
           </OnScroll>
+
+          {this.context.dev && <>
+          <div className='big_bottom' />
+
+          <OnScroll className='grid grid--tight_guttered'>
+            <div className='col col--12of12' ref={element => this.parallax.push({ e: element, l: -1.5 })}>
+              <h6><E c='about' k='engagementsTitle' /></h6>
+            </div>
+            <div ref={element => this.parallax.push({ e: element, l: -3 })} className='col col--10of12 col--phone--12of12'><p className='big'><E c='about' k='engagementsBody' /></p></div>
+
+            <div className='col col--12of12'></div>
+            {this.context.content.about.fields.engagements.map((engagement: { fields: any }, i: number) => <div key={i} className='col col--4of12 col--tablet_portrait--6of12 underline_links' ref={element => this.parallax.push({ e: element, l: -0.5 })}>
+              <LRE c={engagement} k='body' />
+            </div>)}
+          </OnScroll>
+          </>}
 
           <div className='big_bottom' />
         </div>
