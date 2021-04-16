@@ -111,7 +111,6 @@ export class About extends Index {
             </div>)}
           </OnScroll>
 
-          {this.context.dev && <>
           <div className='big_bottom' />
 
           <OnScroll className='grid grid--tight_guttered'>
@@ -125,7 +124,6 @@ export class About extends Index {
               <LRE c={engagement} k='body' />
             </div>)}
           </OnScroll>
-          </>}
 
           <div className='big_bottom' />
         </div>
