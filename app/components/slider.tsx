@@ -92,7 +92,7 @@ export class Slider extends React.PureComponent<Props, State> {
 
   render() {
     return <div className={`slider${this.props.progress ? ' slider--progressbar' : ''}${this.props.fade ? ' slider--fade' : ''}${this.props.opacity ? ' slider--opacity' : ''}`} ref={(element)=> { this.element = element }}>
-      {this.props.slides.map((slide, index)=> <div className='slide' ref={element => this.slides[index] = element} style={this.props.columns && { width: `${100/this.props.columns}%` }} key={index}>
+      {this.props.slides.map((slide, index)=> <div className='slide' ref={element => this.slides[index] = element} style={this.props.columns && { width: `${100/this.props.columns}%` }} key={index} onClick={e => this.next()}>
         {slide}
       </div>)}
 
