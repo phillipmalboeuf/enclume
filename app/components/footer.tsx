@@ -42,10 +42,10 @@ export class Footer extends React.Component<Props, State> {
               <a href='mailto:info@enclume.ca' target='_blank'>info@enclume.ca</a>
             </div>
             <div className='col hide_on_phone'>
-              <a href='https://goo.gl/maps/jPr4tvzm1AB2' target='_blank'>5337, boulevard<br />
-              Saint-Laurent, #350<br />
+              <a href='https://goo.gl/maps/NpgUxc6ewHBePHk88' target='_blank'>4529 rue Clark,<br />
+              Bureau #404<br />
               Montréal, Québec<br />
-              H2T 1S5</a>
+              H2T 2T3</a>
             </div>
             <div className='col'>
               <a href='https://www.facebook.com/enclume.ca/' target='_blank'>Facebook</a><br />

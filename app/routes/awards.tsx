@@ -50,7 +50,7 @@ export class Awards extends Index {
                 </div>
               </div>
               <div className='col col--3of12 col--tablet_landscape--3of12 col--tablet_portrait--8of12 col--phone--12of12'>
-                <Slider draggable={true} ref={slider => this.sliders[index] = slider} slides={award.fields.slider.map((slide: any, i: number)=>
+                <Slider draggable={true} ref={slider => this.sliders[index] = slider} adaptiveHeight={false} slides={award.fields.slider.map((slide: any, i: number)=>
                   <div key={slide.sys.id}>
                     <div className='normal_bottom'><Picture src={slide.fields.file.url} /></div>
                     <div className='grid grid--guttered grid--middle'>
