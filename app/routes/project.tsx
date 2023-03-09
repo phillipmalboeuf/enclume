@@ -22,7 +22,7 @@ export class ProjectsProject extends Index {
     let previous = this.context.content.projects.find(p => p.fields.url === project.fields.previous)
     let next = this.context.content.projects.find(p => p.fields.url === project.fields.next)
     return <>
-      <Helm title={project.fields.title} description={documentToPlainTextString(project.fields.description)} />
+      <Helm title={project.fields.title} description={documentToPlainTextString(project.fields.description)} image={project.fields.hero && project.fields.hero.fields.file.url} />
       <PageTransition />
       <main className='relative' role='main'>
         {({

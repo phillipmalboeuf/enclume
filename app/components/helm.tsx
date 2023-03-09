@@ -7,6 +7,7 @@ import { AppContext } from '../contexts/app'
 export const Helm: SFC<{
   title: string
   description?: string
+  image?: string
 }> = props => {
   return <AppContext.Consumer>
     {({ content, locale }) => <Helmet
@@ -17,7 +18,7 @@ export const Helm: SFC<{
       {/* {['en-US', 'fr-CA'].filter(locale => locale !== locale).map(locale => <link rel='alternate' href={`${process.env.REDIRECT_ROOT}/${locale}`} hrefLang={locale} key={locale}/>)} */}
       <title>{props.title}</title>
       {props.description && <meta name='description' content={props.description} />}
-      
+      {props.image && <meta property="og:image" content={props.image} />}
     </Helmet>}
   </AppContext.Consumer>
 }
