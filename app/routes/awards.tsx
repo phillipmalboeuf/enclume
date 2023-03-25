@@ -20,7 +20,7 @@ export class Awards extends Index {
 
   public render() {
     return <>
-      <Helm title={this.context.content.awards_page.fields.title} description={this.context.content.awards_page.fields.introduction} />
+      <Helm title={'Le prix Enclume'} description={this.context.content.awards_page.fields.introduction} />
       <PageTransition />
       <main className='' role='main'>
 

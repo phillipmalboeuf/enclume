@@ -16,7 +16,7 @@ export class About extends Index {
 
   public render() {
     return <>
-      <Helm title={this.context.content.about.fields.title} description={this.context.content.about.fields.intro} />
+      <Helm title={'À propos'} description={this.context.content.about.fields.intro} />
       <PageTransition />
       <main className='blue_back' role='main'>
         <Icon i='anvil_blue' />

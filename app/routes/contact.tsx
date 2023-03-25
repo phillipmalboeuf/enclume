@@ -27,7 +27,7 @@ export class Contact extends React.Component<Props, State> {
 
   public render() {
     return <>
-      <Helm title={this.context.content.contact.fields.title} description={this.context.content.contact.fields.description} />
+      <Helm title={'Contact'} description={this.context.content.contact.fields.description} />
       <PageTransition />
       <main className='teal_back relative' role='main'>
         <span className='hide_on_tablet_portrait'><Icon i='anvil_orange' /></span>
