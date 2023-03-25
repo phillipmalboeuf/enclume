@@ -17,7 +17,11 @@ export const Helm: SFC<{
       <html lang={locale ? locale.split('-')[0] : 'fr'} />
       {/* {['en-US', 'fr-CA'].filter(locale => locale !== locale).map(locale => <link rel='alternate' href={`${process.env.REDIRECT_ROOT}/${locale}`} hrefLang={locale} key={locale}/>)} */}
       <title>{props.title}</title>
-      {props.description && <meta name='description' content={props.description} />}
+      <meta property='og:title' content={props.title} />
+      {props.description && <>
+        <meta name='description' content={props.description} />
+        <meta property='og:description' content={props.description} />
+      </>}
       {props.image && <meta property="og:image" content={props.image} />}
     </Helmet>}
   </AppContext.Consumer>
