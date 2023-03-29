@@ -33,6 +33,9 @@ export const HTML: React.SFC<Props> = (props) => {
       <link rel='stylesheet' type='text/css' href='/dist/app.css' />
 
       <link rel='icon' type='image/svg' href='https://images.ctfassets.net/esgvtsxg5drv/48cQ9HTqCIWni53SZ3k5XO/93cf6a14580867f6f3ab852088c1ad4f/favicon.svg' />
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-07JJHETBP8"></script>
+      <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-07JJHETBP8');` }}></script>
     </head>
     <body>
 

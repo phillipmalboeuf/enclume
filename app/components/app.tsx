@@ -71,6 +71,7 @@ export class App extends React.Component<Props, State> {
           <Header />
           <Routes onRoute={()=> {
             window.scrollTo(0, 0)
+            window.gtag && window.gtag('config', 'G-07JJHETBP8', { 'page_path': location.pathname })
           }} />
           <Footer />
         </>

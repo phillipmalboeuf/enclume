@@ -13,6 +13,7 @@ declare global {
   interface Window {
     content: any
     dev: boolean
+    gtag: Function
   }
 }
 
