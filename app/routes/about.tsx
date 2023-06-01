@@ -94,7 +94,7 @@ export class About extends Index {
             <div ref={element => this.parallax.push({ e: element, l: -3 })} className='col col--8of12 col--tablet_portrait--10of12 col--phone--12of12'><p className='big'><E c='about' k='collaboratorsBody' /></p></div>
 
             <div className='col col--12of12'></div>
-            {this.context.content.about.fields.collaborators.map((collaborator: { fields: any }) => <div key={collaborator.fields.name} className='col col--12of12' ref={element => this.parallax.push({ e: element, l: -0.5 })}>
+            {this.context.content.about.fields.collaborators && this.context.content.about.fields.collaborators.map((collaborator: { fields: any }) => <div key={collaborator.fields.name} className='col col--12of12' ref={element => this.parallax.push({ e: element, l: -0.5 })}>
               <hr />
               
               <div className='grid grid--guttered grid--middle'>
